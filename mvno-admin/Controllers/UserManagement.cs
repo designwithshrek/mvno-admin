@@ -19,68 +19,23 @@ namespace mvno_admin.Controllers
         }
 
 
-        public ActionResult GetSubscribersList([DataSourceRequest] DataSourceRequest request)
+        public ActionResult GetUsersList([DataSourceRequest] DataSourceRequest request)
         {
             try
             {
-                List<Subscribers> _subscriber = new List<Subscribers>();
-                _subscriber.Add(new Subscribers(35684836, "Active", "Demo", "unavosupport", 9203052333, "John", "Clavin", "3,000 Data Only Pan", 123456, "ACP", false, false));
-                _subscriber.Add(new Subscribers(35684836, "Active", "Demo", "unavosupport", 9203052333, "John", "Clavin", "3,000 Data Only Pan", 123456, "ACP", false, false));
-                _subscriber.Add(new Subscribers(35684836, "Active", "Demo", "unavosupport", 9203052333, "John", "Clavin", "3,000 Data Only Pan", 123456, "ACP", false, false));
-                _subscriber.Add(new Subscribers(35684836, "Active", "Demo", "unavosupport", 9203052333, "John", "Clavin", "3,000 Data Only Pan", 123456, "ACP", false, false));
-                _subscriber.Add(new Subscribers(35684836, "Active", "Demo", "unavosupport", 9203052333, "John", "Clavin", "3,000 Data Only Pan", 123456, "ACP", false, false));
-                _subscriber.Add(new Subscribers(35684836, "Active", "Demo", "unavosupport", 9203052333, "John", "Clavin", "3,000 Data Only Pan", 123456, "ACP", false, false));
-                _subscriber.Add(new Subscribers(35684836, "Active", "Demo", "unavosupport", 9203052333, "John", "Clavin", "3,000 Data Only Pan", 123456, "ACP", false, false));
-                _subscriber.Add(new Subscribers(35684836, "Active", "Demo", "unavosupport", 9203052333, "John", "Clavin", "3,000 Data Only Pan", 123456, "ACP", false, false));
-                _subscriber.Add(new Subscribers(35684836, "Active", "Demo", "unavosupport", 9203052333, "John", "Clavin", "3,000 Data Only Pan", 123456, "ACP", false, false));
-                _subscriber.Add(new Subscribers(35684836, "Active", "Demo", "unavosupport", 9203052333, "John", "Clavin", "3,000 Data Only Pan", 123456, "ACP", false, false));
-                _subscriber.Add(new Subscribers(35684836, "Active", "Demo", "unavosupport", 9203052333, "John", "Clavin", "3,000 Data Only Pan", 123456, "ACP", false, false));
-                _subscriber.Add(new Subscribers(35684836, "Active", "Demo", "unavosupport", 9203052333, "John", "Clavin", "3,000 Data Only Pan", 123456, "ACP", false, false));
-                _subscriber.Add(new Subscribers(35684836, "Active", "Demo", "unavosupport", 9203052333, "John", "Clavin", "3,000 Data Only Pan", 123456, "ACP", false, false));
-                _subscriber.Add(new Subscribers(35684836, "Active", "Demo", "unavosupport", 9203052333, "John", "Clavin", "3,000 Data Only Pan", 123456, "ACP", false, false));
-                _subscriber.Add(new Subscribers(35684836, "Active", "Demo", "unavosupport", 9203052333, "John", "Clavin", "3,000 Data Only Pan", 123456, "ACP", false, false));
-                _subscriber.Add(new Subscribers(35684836, "Active", "Demo", "unavosupport", 9203052333, "John", "Clavin", "3,000 Data Only Pan", 123456, "ACP", false, false));
-                _subscriber.Add(new Subscribers(35684836, "Active", "Demo", "unavosupport", 9203052333, "John", "Clavin", "3,000 Data Only Pan", 123456, "ACP", false, false));
-                _subscriber.Add(new Subscribers(35684836, "Active", "Demo", "unavosupport", 9203052333, "John", "Clavin", "3,000 Data Only Pan", 123456, "ACP", false, false));
-                _subscriber.Add(new Subscribers(35684836, "Active", "Demo", "unavosupport", 9203052333, "John", "Clavin", "3,000 Data Only Pan", 123456, "ACP", false, false));
-                _subscriber.Add(new Subscribers(35684836, "Active", "Demo", "unavosupport", 9203052333, "John", "Clavin", "3,000 Data Only Pan", 123456, "ACP", false, false));
-                _subscriber.Add(new Subscribers(35684836, "Active", "Demo", "unavosupport", 9203052333, "John", "Clavin", "3,000 Data Only Pan", 123456, "ACP", false, false));
-                _subscriber.Add(new Subscribers(35684836, "Active", "Demo", "unavosupport", 9203052333, "John", "Clavin", "3,000 Data Only Pan", 123456, "ACP", false, false));
-                _subscriber.Add(new Subscribers(35684836, "Active", "Demo", "unavosupport", 9203052333, "John", "Clavin", "3,000 Data Only Pan", 123456, "ACP", false, false));
-                _subscriber.Add(new Subscribers(35684836, "Active", "Demo", "unavosupport", 9203052333, "John", "Clavin", "3,000 Data Only Pan", 123456, "ACP", false, false));
-                _subscriber.Add(new Subscribers(35684836, "Active", "Demo", "unavosupport", 9203052333, "John", "Clavin", "3,000 Data Only Pan", 123456, "ACP", false, false));
-                _subscriber.Add(new Subscribers(35684836, "Active", "Demo", "unavosupport", 9203052333, "John", "Clavin", "3,000 Data Only Pan", 123456, "ACP", false, false));
-                _subscriber.Add(new Subscribers(35684836, "Active", "Demo", "unavosupport", 9203052333, "John", "Clavin", "3,000 Data Only Pan", 123456, "ACP", false, false));
-                _subscriber.Add(new Subscribers(35684836, "Active", "Demo", "unavosupport", 9203052333, "John", "Clavin", "3,000 Data Only Pan", 123456, "ACP", false, false));
-                _subscriber.Add(new Subscribers(35684836, "Active", "Demo", "unavosupport", 9203052333, "John", "Clavin", "3,000 Data Only Pan", 123456, "ACP", false, false));
-                _subscriber.Add(new Subscribers(35684836, "Active", "Demo", "unavosupport", 9203052333, "John", "Clavin", "3,000 Data Only Pan", 123456, "ACP", false, false));
-                _subscriber.Add(new Subscribers(35684836, "Active", "Demo", "unavosupport", 9203052333, "John", "Clavin", "3,000 Data Only Pan", 123456, "ACP", false, false));
-                _subscriber.Add(new Subscribers(35684836, "Active", "Demo", "unavosupport", 9203052333, "John", "Clavin", "3,000 Data Only Pan", 123456, "ACP", false, false));
+                List<Users> _user = new List<Users>();
+                _user.Add(new Users(1, "Admin", "John", "Clavin", "Lorem Ipsum Dolor", "jc@unavo.com", "Agent"));
+                _user.Add(new Users(2, "Admin", "John", "Clavin", "Lorem Ipsum Dolor", "jc@unavo.com", "Agent"));
+                _user.Add(new Users(3, "Admin", "John", "Clavin", "Lorem Ipsum Dolor", "jc@unavo.com", "Agent"));
+                _user.Add(new Users(4, "Admin", "John", "Clavin", "Lorem Ipsum Dolor", "jc@unavo.com", "Agent"));
+                _user.Add(new Users(5, "Admin", "John", "Clavin", "Lorem Ipsum Dolor", "jc@unavo.com", "Agent"));
+                _user.Add(new Users(6, "Admin", "John", "Clavin", "Lorem Ipsum Dolor", "jc@unavo.com", "Agent"));
+                _user.Add(new Users(7, "Admin", "John", "Clavin", "Lorem Ipsum Dolor", "jc@unavo.com", "Agent"));
+                _user.Add(new Users(8, "Admin", "John", "Clavin", "Lorem Ipsum Dolor", "jc@unavo.com", "Agent"));
+                _user.Add(new Users(9, "Admin", "John", "Clavin", "Lorem Ipsum Dolor", "jc@unavo.com", "Agent"));
+                _user.Add(new Users(10, "Admin", "John", "Clavin", "Lorem Ipsum Dolor", "jc@unavo.com", "Agent"));
 
-                DataSourceResult result = _subscriber.ToDataSourceResult(request);
-                return Json(result, JsonRequestBehavior.AllowGet);
-            }
-            catch (Exception ex)
-            {
-                return Json(ex.Message, JsonRequestBehavior.AllowGet);
-
-            }
-        }
-
-        public ActionResult GetCoverageInfo([DataSourceRequest] DataSourceRequest request)
-        {
-            try
-            {
-                List<Coverage> _coverage = new List<Coverage>();
-
-                _coverage.Add(new Coverage("Provider 1", "Yes", "Yes", "Lorem ipsum dolor"));
-                _coverage.Add(new Coverage("Provider 2", "Yes", "Yes", "Lorem ipsum dolor"));
-                _coverage.Add(new Coverage("Provider 3", "Yes", "Yes", "Lorem ipsum dolor"));
-                _coverage.Add(new Coverage("Provider 4", "Yes", "Yes", "Lorem ipsum dolor"));
-                _coverage.Add(new Coverage("Provider 5", "Yes", "Yes", "Lorem ipsum dolor"));
-
-
-                DataSourceResult result = _coverage.ToDataSourceResult(request);
+                DataSourceResult result = _user.ToDataSourceResult(request);
                 return Json(result, JsonRequestBehavior.AllowGet);
             }
             catch (Exception ex)

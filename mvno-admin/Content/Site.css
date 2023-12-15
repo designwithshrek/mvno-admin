@@ -186,6 +186,11 @@ ul {
 
 #mvno-admin-page-content #mvno-admin-subscriber-actions {
     height: 64px;
+    background-color: var(--color-white);
+    position: sticky;
+    top: -16px;
+    margin-top: -16px;
+    padding-top: 16px;
 }
 
 #mvno-admin-page-content #mvno-admin-subsciber-grid {

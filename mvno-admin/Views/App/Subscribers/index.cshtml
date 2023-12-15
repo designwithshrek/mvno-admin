@@ -80,10 +80,10 @@
                     columns.Bound(s => s.isTribal).Title("Is Tribal");
                 })
                 .Sortable()
-                .Pageable(pageable => pageable
-                    .PageSizes(new[] { 25, 50, 100, 200 })  // Specify the available page sizes
-                    .ButtonCount(5)
-                )
+                //.Pageable(pageable => pageable
+                //    .PageSizes(new[] { 25, 50, 100, 200 })  // Specify the available page sizes
+                //    .ButtonCount(5)
+                //)
                 .DataSource(dataSource => dataSource
                     .Ajax()
                     .PageSize(20)
