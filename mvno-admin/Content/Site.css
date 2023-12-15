@@ -27,6 +27,7 @@ body {
     color: var(--color-base);
     height: 100%;
     min-width: 992px;
+    overflow: hidden;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -111,9 +112,6 @@ ul {
 
     .k-grid .k-table {
         border: none;
-        border-collapse: collapse;
-        box-sizing: border-box;
-        width: auto;
     }
 
         .k-grid .k-table .k-grid-header {
@@ -178,7 +176,138 @@ ul {
 
 
 
-#subscribersGrid {
-    height: calc(100vh - 317px);
+#mvno-admin-breadcrumb-actions {
+    height: 64px;
+}
+
+    #mvno-admin-breadcrumb-actions + #mvno-admin-page-content {
+        height: calc(100% - 64px);
+    }
+
+#mvno-admin-page-content #mvno-admin-subscriber-actions {
+    height: 64px;
+}
+
+#mvno-admin-page-content #mvno-admin-subsciber-grid {
+    height: calc(100% - 64px);
+}
+
+.k-dropdownlist.form-control {
+    display: flex;
+    padding: 0;
+}
+
+    .k-dropdownlist.form-control:hover {
+        background-color: transparent;
+    }
+
+    .k-datepicker {
+        border-radius: 0.25rem;
+    }
+
+.k-datepicker .k-button {
+    background-color: transparent;
+    border-color: transparent;
+}
+
+.k-input,
+.k-dropdownlist {
+    height: calc(3.5rem + 2px);
+    background-color: #fff;
+    border-color: #ced4da;
+    color: inherit;
+}
+
+    .k-dropdownlist:focus,
+    .k-dropdownlist:hover {
+        background-color: #fff;
+        border-color: #ced4da;
+    }
+
+
+    .k-dropdownlist:focus {
+        box-shadow: 0 0 0 0.25rem rgba(13,110,253,.25);
+    }
+
+
+.k-input-md .k-input-inner {
+    padding-inline: .75rem;
+    padding-block: 1rem;
+    font-size: 16px;
+}
+
+.k-floating-label-container {
+    padding-top: 0;
+    width: 100%;
+}
+
+.k-floating-label-container.k-empty > .k-label {
+    top: calc(1rem + 1px);
+    left: calc(0.75rem + 1px);
+}
+
+.k-floating-label-container:focus-within > .k-label,
+.k-floating-label-container > .k-label,
+.k-floating-label-container.k-focus > .k-label {
+    top: 0;
+    opacity: .65;
+    left: calc(0.75rem + 1px);
+    transform: scale(.85);
+}
+
+.k-floating-label-container.k-empty:not(.k-focus) > .k-label {
+    opacity: 1;
+}
+
+.k-datepicker .k-input-button {
+    width: 58px;
+    cursor: text;
+    background-color: transparent;
+    border: none;
+}
+
+fieldset {
+    padding: 24px;
+    border: 1px solid #c3c6d1;
+    border-radius: 5px;
+}
+
+    fieldset ~ fieldset {
+        margin-top: 24px;
+    }
+
+    fieldset > legend {
+        color: var(--theme-base);
+        font-size: 0.875rem;
+        font-weight: 600;
+        float: none;
+        width: auto;
+        padding: 0 8px;
+        background-color: #fff;
+    }
+
+
+#mvno-admin-create-subscriber-steps {
+    flex: 0 0 300px;
+    width: 300px;
     overflow: auto;
+}
+
+#mvno-admin-step-actions {
+    background-color: var(--color-white);
+    position: sticky;
+    bottom: -16px;
+    left: 0;
+    right: 0;
+    z-index: 999;
+}
+
+.btn-primary {
+    background-color: var(--theme-base);
+    border-color: var(--theme-base)
+}
+
+.btn-primary:hover {
+    background-color: var(--theme-dark);
+    border-color: var(--theme-dark)
 }

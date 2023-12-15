@@ -39,8 +39,20 @@ namespace mvno_admin
 
             routes.MapRoute(
                 name: "Create_New_Subscriber",
-                url: "app/{controller}/{action}/{id}",
+                url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Subscribers", action = "CreateNewSubscriber", id = UrlParameter.Optional }
+            );
+
+            routes.MapRoute(
+                name: "View_Subscriber",
+                url: "{controller}/{action}/{id}",
+                defaults: new { controller = "Subscribers", action = "ViewSubscriber", id = UrlParameter.Optional }
+            );
+
+            routes.MapRoute(
+                name: "User_Management",
+                url: "{controller}/{action}/{id}",
+                defaults: new { controller = "UserManagement", action = "UsersList", id = UrlParameter.Optional }
             );
 
         }

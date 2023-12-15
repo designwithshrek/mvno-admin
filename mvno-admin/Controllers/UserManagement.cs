@@ -9,28 +9,15 @@ using System.Web.Mvc;
 
 namespace mvno_admin.Controllers
 {
-    public class SubscribersController : Controller
+    public class UserManagementController : Controller
     {
-        public ActionResult SubscribersList()
+        public ActionResult UsersList()
         {
             ViewBag.Message = "Launched Subscribers Page";
-            return View("~/Views/App/Subscribers/Index.cshtml");
+            return View("~/Views/App/User Management/Index.cshtml");
 
         }
 
-        public ActionResult CreateNewSubscriber()
-        {
-            ViewBag.Message = "Launched Create Subscriber Page";
-            return View("~/Views/App/Subscribers/Add/Index.cshtml");
-
-        }
-
-        public ActionResult ViewSubscriber()
-        {
-            ViewBag.Message = "Launched View Subscriber Page";
-            return View("~/Views/App/Subscribers/View/Index.cshtml");
-
-        }
 
         public ActionResult GetSubscribersList([DataSourceRequest] DataSourceRequest request)
         {
