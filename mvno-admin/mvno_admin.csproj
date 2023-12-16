@@ -359,7 +359,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\DeviceInventory\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Scripts\jquery-3.7.1.slim.min.map" />
