@@ -32,7 +32,7 @@
                                     </svg>
                                     Download Template
                                 </button>
-                                <button class="btn btn-primary " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Advance Search</button>
+                                <button class="btn btn-primary" id="advanceSearchBtn" type="button" data-bs-toggle="offcanvas" data-bs-target="#canvasDeviceSearch" aria-controls="offcanvasRight">Advance Search</button>
 
 
 
@@ -54,7 +54,25 @@
           tabstrip.Add().Text("Devices")
               .Selected(true)
               .Content(@<text>
-                    <div id="mvno-admin-devices-grid" class="w-100 overflow-auto">
+                    <section id="mvno-admin-add-device-actions">
+                        <div class="d-flex align-items-center flex-nowrap">
+                            <div class="flex-fill">
+                                 <button class="btn btn-primary" name="addDeviceModal" id="btnAddDeviceModal" data-bs-toggle="modal" type="button"
+                                         data-bs-target="#addDeviceInventoryModal">
+                                 Add Device
+                             </button>
+                            </div>
+                            <div class="flex-grow-0">
+                                <button class="btn">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
+                                        <path d="M14.5 3.5V7.5C14.5 7.76522 14.6054 8.01957 14.7929 8.20711C14.9804 8.39464 15.2348 8.5 15.5 8.5H19.5M14.5 3.5H7.5C6.96957 3.5 6.46086 3.71071 6.08579 4.08579C5.71071 4.46086 5.5 4.96957 5.5 5.5V19.5C5.5 20.0304 5.71071 20.5391 6.08579 20.9142C6.46086 21.2893 6.96957 21.5 7.5 21.5H12M14.5 3.5L19.5 8.5M19.5 8.5V13.5M14.5 19.5H21.5M21.5 19.5L18.5 16.5M21.5 19.5L18.5 22.5" stroke="#1B1565" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                    <span>Export</span>
+                                </button>
+                            </div>
+                        </div>
+                    </section>
+                    <div id="mvno-admin-devices-grid" class="w-100 overflow-auto mt-2">
                                             @(Html.Kendo().Grid<mvno_admin.Models.DeviceInventoryModel>()
                                              .Name("devices_Grid")
                                              .Columns(columns =>
@@ -81,7 +99,25 @@
 
           tabstrip.Add().Text("SIMs")
               .Content(@<text>
-                      <div id="mvno-admin-SIMs-grid" class="w-100 overflow-auto">
+                    <section id="mvno-admin-add-sims-actions">
+                        <div class="d-flex align-items-center flex-nowrap">
+                            <div class="flex-fill">
+                                 <button class="btn btn-primary" name="AddSIMsModal" id="btnAddSIMsModal" data-bs-toggle="modal" type="button"
+                                         data-bs-target="#addSIMsInventoryModal">
+                                 Add SIMs
+                             </button>
+                            </div>
+                            <div class="flex-grow-0">
+                                <button class="btn">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
+                                        <path d="M14.5 3.5V7.5C14.5 7.76522 14.6054 8.01957 14.7929 8.20711C14.9804 8.39464 15.2348 8.5 15.5 8.5H19.5M14.5 3.5H7.5C6.96957 3.5 6.46086 3.71071 6.08579 4.08579C5.71071 4.46086 5.5 4.96957 5.5 5.5V19.5C5.5 20.0304 5.71071 20.5391 6.08579 20.9142C6.46086 21.2893 6.96957 21.5 7.5 21.5H12M14.5 3.5L19.5 8.5M19.5 8.5V13.5M14.5 19.5H21.5M21.5 19.5L18.5 16.5M21.5 19.5L18.5 22.5" stroke="#1B1565" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                    <span>Export</span>
+                                </button>
+                            </div>
+                        </div>
+                    </section>
+                      <div id="mvno-admin-SIMs-grid" class="w-100 overflow-auto mt-2">
                         @(Html.Kendo().Grid<mvno_admin.Models.DeviceInventoryModel>()
                          .Name("SIMs_Grid")
                          .Columns(columns =>
@@ -108,7 +144,26 @@
 
           tabstrip.Add().Text("Device Templates")
               .Content(@<text>
-                          <div id="mvno-admin-DeviceTemplate-grid" class="w-100 overflow-auto">
+
+                    <section id="mvno-admin-add-device-template-actions">
+                            <div class="d-flex align-items-center flex-nowrap">
+                                <div class="flex-fill">
+                                     <button class="btn btn-primary" name="DeviceTemplateModal" id="btnAddDeviceTemplateInventoryModal" data-bs-toggle="modal" type="button"
+                                             data-bs-target="#addDeviceTemplateInventoryModal">
+                                     Add Device Template
+                                 </button>
+                                </div>
+                                <div class="flex-grow-0">
+                                    <button class="btn">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
+                                            <path d="M14.5 3.5V7.5C14.5 7.76522 14.6054 8.01957 14.7929 8.20711C14.9804 8.39464 15.2348 8.5 15.5 8.5H19.5M14.5 3.5H7.5C6.96957 3.5 6.46086 3.71071 6.08579 4.08579C5.71071 4.46086 5.5 4.96957 5.5 5.5V19.5C5.5 20.0304 5.71071 20.5391 6.08579 20.9142C6.46086 21.2893 6.96957 21.5 7.5 21.5H12M14.5 3.5L19.5 8.5M19.5 8.5V13.5M14.5 19.5H21.5M21.5 19.5L18.5 16.5M21.5 19.5L18.5 22.5" stroke="#1B1565" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                        <span>Export</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </section>
+                          <div id="mvno-admin-DeviceTemplate-grid" class="w-100 overflow-auto mt-2">
                             @(Html.Kendo().Grid<mvno_admin.Models.DeviceInventoryModel>()
                              .Name("DeviceTemplates_Grid")
                              .Columns(columns =>
@@ -141,9 +196,9 @@
 </section>
 
 <!--Canvas modal-->
-<div class="offcanvas offcanvas-end w-50" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+<div class="offcanvas offcanvas-end w-50" tabindex="-1" id="canvasDeviceSearch" aria-labelledby="canvasDeviceSearchLabel">
     <div class="offcanvas-header">
-        <h5 id="offcanvasRightLabel">Advance Search</h5>
+        <h5 id="canvasDeviceSearchLabel">Advance Search</h5>
         <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body">
@@ -385,6 +440,267 @@
     </div>
 </div>
 
+<div class="offcanvas offcanvas-end w-50" tabindex="-1" id="canvasSIMsSearch" aria-labelledby="canvasSIMsSearchLabel">
+    <div class="offcanvas-header">
+        <h5 id="canvasSIMsSearchLabel">Advance Search</h5>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+        <div class="box-body">
+            <div class="row mb-3" id="div_Row1_AdvanceSearch_Inventory">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <div class="col-sm-11">
+                            @Html.TextBox("SerialNumber", "", new { @class = "form-control ", @id = "SerialNumber", @placeholder = "ESN/SerialNumber" })
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <div class="col-sm-11">
+                            @Html.TextBox("MDN", "", new { @class = "form-control ", @id = "MDN", @placeholder = "MDN" })
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row mb-3" id="div_Row2_AdvanceSearch_Inventory">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <div class="col-sm-11">
+                            @Html.TextBox("IMEI", "", new { @class = "form-control ", @id = "IMEI", @placeholder = "IMEI" })
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <div class="col-sm-11">
+                            @Html.TextBox("UICC_SIM", "", new { @class = "form-control ", @id = "UICC_SIM", @placeholder = "UICC/SIM" })
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row mb-3" id="div_Row3_AdvanceSearch_Inventory">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <div class="col-sm-11">
+                            @(Html.Kendo().DropDownList()
+                                 .Name("DeviceType_SIMSearch")
+                                 .DataTextField("Text")
+                                 .DataValueField("Value")
+                                 .OptionLabel("")
+                                 .Label(label =>
+                                 {
+                                     label.Content("Device Type");
+                                     label.Floating(true);
+                                 })
+                                 .HtmlAttributes(new { @class = "form-control" })
+                             )
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <div class="col-sm-11">
+                            @(Html.Kendo().DropDownList()
+                                    .Name("StatusType_SIMSearch")
+                                    .DataTextField("Text")
+                                    .DataValueField("Value")
+                                    .OptionLabel("")
+                                    .Label(label =>
+                                    {
+                                        label.Content("Status Type");
+                                        label.Floating(true);
+                                    })
+                                    .HtmlAttributes(new { @class = "form-control" })
+                                )
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row mb-3" id="div_Row9_AdvanceSearch_Inventory">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <div class="col-sm-11">
+                            @(Html.Kendo().DropDownList()
+                                     .Name("Provider_SIMSearch")
+                                     .DataTextField("Text")
+                                     .DataValueField("Value")
+                                     .OptionLabel("")
+                                     .Label(label =>
+                                     {
+                                         label.Content("Provider");
+                                         label.Floating(true);
+                                     })
+                                     .HtmlAttributes(new { @class = "form-control" })
+                                 )
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+
+                </div>
+
+            </div>
+
+            <div class="row mb-3" id="div_Row10_AdvanceSearch_Inventory">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div class="text-start ps-4">
+                        <!-- Left Button -->
+                        <button class="btn  border" name="ResetAdvanceSearch" id="btnResetAdvanceSearch">
+                            Reset
+                        </button>
+                    </div>
+                    <div class="text-end pe-4">
+                        <div class="d-inline">
+                            <button class="btn btn-primary " name="ApplyAdvanceSearch" id="btnApplyAdvanceSearch">
+                                Advance Search
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="offcanvas offcanvas-end w-50" tabindex="-1" id="canvasDeviceTemplateSearch" aria-labelledby="canvasDeviceTemplateSearchLabel">
+    <div class="offcanvas-header">
+        <h5 id="canvasDeviceTemplateSearchLabel">Advance Search</h5>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+        <div class="box-body">
+            <div class="row mb-3" id="div_Row1_AdvanceSearch_Inventory">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <div class="col-sm-11">
+                            @Html.TextBox("SerialNumber", "", new { @class = "form-control ", @id = "SerialNumber", @placeholder = "ESN/SerialNumber" })
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <div class="col-sm-11">
+                            @Html.TextBox("MDN", "", new { @class = "form-control ", @id = "MDN", @placeholder = "MDN" })
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row mb-3" id="div_Row2_AdvanceSearch_Inventory">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <div class="col-sm-11">
+                            @Html.TextBox("IMEI", "", new { @class = "form-control ", @id = "IMEI", @placeholder = "IMEI" })
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <div class="col-sm-11">
+                            @Html.TextBox("UICC_SIM", "", new { @class = "form-control ", @id = "UICC_SIM", @placeholder = "UICC/SIM" })
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row mb-3" id="div_Row3_AdvanceSearch_Inventory">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <div class="col-sm-11">
+                            @(Html.Kendo().DropDownList()
+                         .Name("DeviceType_TemplateSearch")
+                         .DataTextField("Text")
+                         .DataValueField("Value")
+                         .OptionLabel("")
+                         .Label(label =>
+                         {
+                             label.Content("Device Type");
+                             label.Floating(true);
+                         })
+                         .HtmlAttributes(new { @class = "form-control" })
+                     )
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <div class="col-sm-11">
+                            @(Html.Kendo().DropDownList()
+                            .Name("StatusType_TemplateSearch")
+                            .DataTextField("Text")
+                            .DataValueField("Value")
+                            .OptionLabel("")
+                            .Label(label =>
+                            {
+                                label.Content("Status Type");
+                                label.Floating(true);
+                            })
+                            .HtmlAttributes(new { @class = "form-control" })
+                        )
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row mb-3" id="div_Row9_AdvanceSearch_Inventory">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <div class="col-sm-11">
+                            @(Html.Kendo().DropDownList()
+                             .Name("Provider_TemplateSearch")
+                             .DataTextField("Text")
+                             .DataValueField("Value")
+                             .OptionLabel("")
+                             .Label(label =>
+                             {
+                                 label.Content("Provider");
+                                 label.Floating(true);
+                             })
+                             .HtmlAttributes(new { @class = "form-control" })
+                         )
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+
+                </div>
+
+            </div>
+
+            <div class="row mb-3" id="div_Row10_AdvanceSearch_Inventory">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div class="text-start ps-4">
+                        <!-- Left Button -->
+                        <button class="btn  border" name="ResetAdvanceSearch" id="btnResetAdvanceSearch">
+                            Reset
+                        </button>
+                    </div>
+                    <div class="text-end pe-4">
+                        <div class="d-inline">
+                            <button class="btn btn-primary " name="ApplyAdvanceSearch" id="btnApplyAdvanceSearch">
+                                Advance Search
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 <!-- Modal Move Inventory -->
 <div class="modal fade" id="moveDeviceIntentoryModal" tabindex="-1" aria-labelledby="moveDeviceIntentoryLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
@@ -466,9 +782,316 @@
     </div>
 </div>
 
+<div class="modal fade" id="addDeviceInventoryModal" tabindex="-1" aria-labelledby="DeviceIntentoryLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="batchTracInventoryHeaderLabel">New Device</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="box-body">
+                    <div class="row mb-3" id="div_Row1_AddNewDevice">
+                        <div class="col-sm-6">
+                            @(Html.Kendo().DropDownList()
+                                            .Name("Provider_AddDevice")
+                                            .DataTextField("Text")
+                                            .DataValueField("Value")
+                                            .OptionLabel("")
+                                            .Label(label =>
+                                            {
+                                                label.Content("Provider");
+                                                label.Floating(true);
+                                            })
+                                            .HtmlAttributes(new { @class = "form-control" })
+                                        )
+                        </div>
+                        <div class="col-sm-6">
+
+                            @(Html.Kendo().DropDownList()
+                                        .Name("DeviceRateTemplate_AddDevice")
+                                        .DataTextField("Text")
+                                        .DataValueField("Value")
+                                        .OptionLabel("")
+                                        .Label(label =>
+                                        {
+                                            label.Content("Device Rate Template");
+                                            label.Floating(true);
+                                        })
+                                        .HtmlAttributes(new { @class = "form-control" })
+                                    )
+                        </div>
+                    </div>
+                    <div class="row mb-3" id="div_Row2_AddNewDevice">
+                        <div class="col-sm-6">
+                            @(Html.Kendo().DropDownList()
+                                .Name("ModelNumber_AddDevice")
+                                .DataTextField("Text")
+                                .DataValueField("Value")
+                                .OptionLabel("")
+                                .Label(label =>
+                                {
+                                    label.Content("Model Number");
+                                    label.Floating(true);
+                                })
+                                .HtmlAttributes(new { @class = "form-control" })
+                            )
+                        </div>
+                        <div class="col-sm-6">
+
+                            @(Html.Kendo().DropDownList()
+                                .Name("Manufacturer_AddDevice")
+                                .DataTextField("Text")
+                                .DataValueField("Value")
+                                .OptionLabel("")
+                                .Label(label =>
+                                {
+                                    label.Content("Make/Manufacturer");
+                                    label.Floating(true);
+                                })
+                                .HtmlAttributes(new { @class = "form-control" })
+                            )
+                        </div>
+                    </div>
+                    <div class="row mb-3" id="div_Row3_AddNewDevice">
+                        <div class="col-sm-6">
+                            @(Html.Kendo().DropDownList()
+                                .Name("DeviceTypeOption_AddDevice")
+                                .DataTextField("Text")
+                                .DataValueField("Value")
+                                .OptionLabel("")
+                                .Label(label =>
+                                {
+                                    label.Content("Device Type");
+                                    label.Floating(true);
+                                })
+                                .HtmlAttributes(new { @class = "form-control" })
+                            )
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                @Html.TextBox("DeviceType", "", new { @class = "form-control ", @id = "DeviceType_AddNewDevice", @placeholder = "Device Type" })
+                            </div>
+                        </div>
+                    </div>
+                   
+                    <div class="row mb-3" id="div_Row4_AddNewDevice">
+                        <div class="col-sm-6">
+                            @Html.TextBox("DiscountDescription", "", new { @class = "form-control ", @id = "DiscountDescription", @placeholder = "Discount Description" })
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                @Html.TextBox("ESN", "", new { @class = "form-control ", @id = "ESN_AddDevice", @placeholder = "ESN" })
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mb-3" id="div_Row5_AddNewDevice">
+                        <div class="col-sm-6">
+                            @(Html.Kendo().CheckBox()
+                                 .Name("PreActivate")
+                                 .Label("Pre Activate")
+                                 .Value("PreActivate")
+                                 .Checked(false)
+                             )
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                @Html.TextBox("UICC", "", new { @class = "form-control ", @id = "UICC_AddDevice", @placeholder = "UICC" })
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mb-3" id="div_Row6_AddNewDevice">
+                        <div class="col-sm-6">
+                            @Html.TextBox("ESNHEX", "", new { @class = "form-control ", @id = "ESNHEX_AddDevice", @placeholder = "ESN HEX" })
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                @Html.TextBox("MSL", "", new { @class = "form-control ", @id = "MSL_AddDevice", @placeholder = "MSL" })
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3" id="div_Row7_AddNewDevice">
+                        <div class="col-sm-6">
+                            @(Html.Kendo().DropDownList()
+                                .Name("PurchasePrice_AddDevice")
+                                .DataTextField("Text")
+                                .DataValueField("Value")
+                                .OptionLabel("")
+                                .Label(label =>
+                                {
+                                    label.Content("Purchase Price");
+                                    label.Floating(true);
+                                })
+                                .HtmlAttributes(new { @class = "form-control" })
+                            )
+                        </div>
+                        <div class="col-sm-6">
+
+                            @(Html.Kendo().DropDownList()
+                                    .Name("CustomerPrice_AddDevice")
+                                    .DataTextField("Text")
+                                    .DataValueField("Value")
+                                    .OptionLabel("")
+                                    .Label(label =>
+                                    {
+                                        label.Content("Customer Price");
+                                        label.Floating(true);
+                                    })
+                                    .HtmlAttributes(new { @class = "form-control" })
+                                )
+                        </div>
+                    </div>
+                </div>
+                <div class="add-device-note">
+                    Note: For Tablets, To ACP Market price will be submitted as the sum of Purchase Price and Customer Price.
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-4 text-start ps-4">
+                            <button type="button" class="btn" data-bs-dismiss="modal">Close</button>
+                        </div>
+                        <div class="col-4 text-center">
+                        </div>
+                        <div class="col-4 text-end pe-4">
+                            <button type="button" class="btn btn-primary">Save</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="addSIMsInventoryModal" tabindex="-1" aria-labelledby="SIMsIntentoryLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="batchTracInventoryHeaderLabel">Add SIMs</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+            </div>
+            <div class="modal-footer">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-4 text-start ps-4">
+                            <button type="button" class="btn" data-bs-dismiss="modal">Close</button>
+                        </div>
+                        <div class="col-4 text-center">
+                        </div>
+                        <div class="col-4 text-end pe-4">
+                            <button type="button" class="btn btn-primary">Save</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="addDeviceTemplateInventoryModal" tabindex="-1" aria-labelledby="DeviceTemplateIntentoryLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="batchTracInventoryHeaderLabel">New Device Template</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="box-body">
+                    <div class="row mb-3" id="div_Row1_AddNewDeviceTemplate">
+                        <div class="col-sm-6">
+                            @(Html.Kendo().DropDownList()
+                            .Name("Clecs_AddDeviceTemplate")
+                            .DataTextField("Text")
+                            .DataValueField("Value")
+                            .OptionLabel("")
+                            .Label(label =>
+                            {
+                                label.Content("Clecs");
+                                label.Floating(true);
+                            })
+                            .HtmlAttributes(new { @class = "form-control" })
+                        )
+                        </div>
+                        <div class="col-sm-6">
+                            @Html.TextBox("Name", "", new { @class = "form-control ", @id = "Name_AddNewDeviceTemplate", @placeholder = "Name" })
+                        </div>
+                    </div>
+                    <div class="row mb-3" id="div_Row2_AddNewDeviceTemplate">
+                        <div class="col-sm-6">
+                            @Html.TextBox("Make/Manufacture", "", new { @class = "form-control ", @id = "Manufacture_AddNewDeviceTemplate", @placeholder = "Make/Manufacture" })
+                        </div>
+                        <div class="col-sm-6">
+                            @Html.TextBox("ModelNumber", "", new { @class = "form-control ", @id = "ModelNumber_AddNewDeviceTemplate", @placeholder = "Model Number" })
+                        </div>
+                    </div>
+                    <div class="row mb-3" id="div_Row3_AddNewDeviceTemplate">
+                        <div class="col-sm-6">
+                            @Html.TextBox("MarketPriceDescription", "", new { @class = "form-control ", @id = "MPDescription_AddNewDeviceTemplate", @placeholder = "Market Price Description" })
+                        </div>
+                        <div class="col-sm-6">
+                            @Html.TextBox("DiscountValue", "", new { @class = "form-control ", @id = "DiscountValue_AddNewDeviceTemplate", @placeholder = "Discount Value" })
+                        </div>
+                    </div>
+                    <div class="row mb-3" id="div_Row3_AddNewDeviceTemplate">
+                        <div class="col-sm-6">
+                            @Html.TextBox("DiscountDescription", "", new { @class = "form-control ", @id = "Discount_AddNewDeviceTemplate", @placeholder = "Discount Description" })
+                        </div>
+                        <div class="col-sm-6">
+                            @(Html.Kendo().CheckBox()
+                                 .Name("Active")
+                                 .Label("Active")
+                                 .Value("Active")
+                                 .Checked(false)
+                             )
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-4 text-start ps-4">
+                            <button type="button" class="btn" data-bs-dismiss="modal">Close</button>
+                        </div>
+                        <div class="col-4 text-center">
+                        </div>
+                        <div class="col-4 text-end pe-4">
+                            <button type="button" class="btn btn-primary">Upload</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
 
 <script type="text/javascript">
+
     $(document).ready(function () {
+
+        var selectedTabStripIndex = 0;
+        // Assuming you have a variable for your TabStrip
+        var tabstrip = $("#tabstrip").data("kendoTabStrip");
+        // Attach a click event handler to the tab
+        tabstrip.bind("select", function (e) {
+            var x = e.item;
+            selectedTabStripIndex = $(x).index();
+            $('#advanceSearchBtn').attr('data-bs-target', getOffcanvasTarget());
+        });
+
+        // Function to get the offcanvas target based on the selected tab
+        function getOffcanvasTarget() {
+            return selectedTabStripIndex === 1 ? "#canvasSIMsSearch" :
+                selectedTabStripIndex === 2 ? "#canvasDeviceTemplateSearch" :
+                    "#canvasDeviceSearch";
+        }
     });
 
 </script>
