@@ -55,6 +55,17 @@ namespace mvno_admin
                 defaults: new { controller = "UserManagement", action = "UsersList", id = UrlParameter.Optional }
             );
 
+            routes.MapRoute(
+                name: "Packages",
+                url: "{controller}/{action}/{id}",
+                defaults: new { controller = "Packages", action = "PackagesList", id = UrlParameter.Optional }
+            );
+
+            routes.MapRoute(
+                name: "Create_New_Package",
+                url: "{controller}/{action}/{id}",
+                defaults: new { controller = "Packages", action = "CreateNewPackages", id = UrlParameter.Optional }
+            );
         }
     }
 }

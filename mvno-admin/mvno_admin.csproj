@@ -242,11 +242,14 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AppController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\PackagesController.cs" />
     <Compile Include="Controllers\UserManagement.cs" />
     <Compile Include="Controllers\SubscribersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\PackagesModel.cs" />
+    <Compile Include="Models\RolesModel.cs" />
     <Compile Include="Models\UsersModel.cs" />
     <Compile Include="Models\CoverageModel.cs" />
     <Compile Include="Models\SubscribersModel.cs" />
@@ -343,6 +346,7 @@
     <Content Include="Views\App\Devices\Add\index.cshtml" />
     <Content Include="Views\App\Devices\View\index.cshtml" />
     <Content Include="Views\App\User Management\index.cshtml" />
+    <Content Include="Views\App\Packages\Add\index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\Site.css" />

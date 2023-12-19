@@ -34,8 +34,44 @@ namespace mvno_admin.Controllers
                 _user.Add(new Users(8, "Admin", "John", "Clavin", "Lorem Ipsum Dolor", "jc@quetzal.com", "Agent"));
                 _user.Add(new Users(9, "Admin", "John", "Clavin", "Lorem Ipsum Dolor", "jc@quetzal.com", "Agent"));
                 _user.Add(new Users(10, "Admin", "John", "Clavin", "Lorem Ipsum Dolor", "jc@quetzal.com", "Agent"));
+                _user.Add(new Users(11, "Admin", "John", "Clavin", "Lorem Ipsum Dolor", "jc@quetzal.com", "Agent"));
+                _user.Add(new Users(12, "Admin", "John", "Clavin", "Lorem Ipsum Dolor", "jc@quetzal.com", "Agent"));
+                _user.Add(new Users(13, "Admin", "John", "Clavin", "Lorem Ipsum Dolor", "jc@quetzal.com", "Agent"));
+                _user.Add(new Users(14, "Admin", "John", "Clavin", "Lorem Ipsum Dolor", "jc@quetzal.com", "Agent"));
+                _user.Add(new Users(15, "Admin", "John", "Clavin", "Lorem Ipsum Dolor", "jc@quetzal.com", "Agent"));
 
                 DataSourceResult result = _user.ToDataSourceResult(request);
+                return Json(result, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception ex)
+            {
+                return Json(ex.Message, JsonRequestBehavior.AllowGet);
+
+            }
+        }
+
+        public ActionResult GetRolesList([DataSourceRequest] DataSourceRequest request)
+        {
+            try
+            {
+                List<Roles> _role = new List<Roles>();
+                _role.Add(new Roles("Admininistrator", 50, "Default", "True"));
+                _role.Add(new Roles("Admininistrator", 50, "Default", "True"));
+                _role.Add(new Roles("Admininistrator", 50, "Default", "True"));
+                _role.Add(new Roles("Admininistrator", 50, "Default", "True"));
+                _role.Add(new Roles("Admininistrator", 50, "Default", "True"));
+                _role.Add(new Roles("Admininistrator", 50, "Default", "True"));
+                _role.Add(new Roles("Admininistrator", 50, "Default", "True"));
+                _role.Add(new Roles("Admininistrator", 50, "Default", "True"));
+                _role.Add(new Roles("Admininistrator", 50, "Default", "True"));
+                _role.Add(new Roles("Admininistrator", 50, "Default", "True"));
+                _role.Add(new Roles("Admininistrator", 50, "Default", "True"));
+                _role.Add(new Roles("Admininistrator", 50, "Default", "True"));
+                _role.Add(new Roles("Admininistrator", 50, "Default", "True"));
+                _role.Add(new Roles("Admininistrator", 50, "Default", "True"));
+                _role.Add(new Roles("Admininistrator", 50, "Default", "True"));
+
+                DataSourceResult result = _role.ToDataSourceResult(request);
                 return Json(result, JsonRequestBehavior.AllowGet);
             }
             catch (Exception ex)
