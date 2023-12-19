@@ -46,5 +46,65 @@ namespace mvno_admin.Controllers
 
             }
         }
+
+        public ActionResult GetDeviceInventorySimList([DataSourceRequest] DataSourceRequest request)
+        {
+            try
+            {
+                List<DeviceInventorySimModel> _deviceInventorySim = new List<DeviceInventorySimModel>();
+
+                for (int i = 0; i < 20; i++)
+                {
+                    _deviceInventorySim.Add(new DeviceInventorySimModel
+                    (
+                        ILEC: $"SimILEC{i + 1}",
+                        SIM: $"SIM{i + 1}",
+                        DeviceESN: 100000 + i,
+                        Status: "Active",
+                        UICC: $"SimUICC{i + 1}",
+                        MDN: 5550000000 + i,
+                        Carrier: $"SimCarrier{i + 1}",
+                        Price: 29.99 + i
+                    ));
+                }
+                DataSourceResult result = _deviceInventorySim.ToDataSourceResult(request);
+                return Json(result, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception ex)
+            {
+                return Json(ex.Message, JsonRequestBehavior.AllowGet);
+
+            }
+        }
+
+        public ActionResult GetDeviceInventoryTemplateList([DataSourceRequest] DataSourceRequest request)
+        {
+            try
+            {
+                List<DeviceInventoryTemplateModel> _deviceInventoryTemplate = new List<DeviceInventoryTemplateModel>();
+
+                for (int i = 0; i < 20; i++)
+                {
+                    _deviceInventoryTemplate.Add(new DeviceInventoryTemplateModel
+                    (
+                        RateTemplateId: i + 1,
+                        CLEC: $"TemplateCLEC{i + 1}",
+                        Manufacturer: 123456 + i,
+                        ModelNumber: $"TemplateModel{i + 1}",
+                        Name: $"TemplateName{i + 1}",
+                        MarketPrice: 999 + i,
+                        MarketPriceDescription: $"Description{i + 1}",
+                        Discount: 0.1 + (i * 0.01)
+                    ));
+                }
+                DataSourceResult result = _deviceInventoryTemplate.ToDataSourceResult(request);
+                return Json(result, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception ex)
+            {
+                return Json(ex.Message, JsonRequestBehavior.AllowGet);
+
+            }
+        }
     }
 }

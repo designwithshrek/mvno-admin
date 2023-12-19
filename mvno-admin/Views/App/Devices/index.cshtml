@@ -118,24 +118,23 @@
                         </div>
                     </section>
                       <div id="mvno-admin-SIMs-grid" class="w-100 overflow-auto mt-2">
-                        @(Html.Kendo().Grid<mvno_admin.Models.DeviceInventoryModel>()
+                        @(Html.Kendo().Grid<mvno_admin.Models.DeviceInventorySimModel>()
                          .Name("SIMs_Grid")
                          .Columns(columns =>
                          {
                              columns.Bound(s => s.ILEC).Title("ILEC Request");
-                             columns.Bound(s => s.CLEC).Title("CLEC");
-                             columns.Bound(s => s.DeviceId).Title("Device Id");
-                             columns.Bound(s => s.OrderId).Title("Order Id");
-                             columns.Bound(s => s.ESN).Title("ESN");
+                             columns.Bound(s => s.SIM).Title("SIM");
+                             columns.Bound(s => s.DeviceESN).Title("Device IMEI/ESN");
                              columns.Bound(s => s.Status).Title("Status");
-                             columns.Bound(s => s.UICC).Title("UICC");
-                             columns.Bound(s => s.MSL).Title("MSL");
+                             columns.Bound(s => s.MDN).Title("MDN");
+                             columns.Bound(s => s.Carrier).Title("Carrier");
+                             columns.Bound(s => s.Price).Title("Price");
                          })
                          .Sortable()
                          .DataSource(dataSource => dataSource
                              .Ajax()
                              .PageSize(20)
-                             .Read(read => read.Action("GetDeviceInventoryList", "DeviceInventory"))
+                             .Read(read => read.Action("GetDeviceInventorySimList", "DeviceInventory"))
                          )
                          //.Events(events => events.DataBound("onGridDataBound"))
                          )
@@ -164,28 +163,30 @@
                             </div>
                         </section>
                           <div id="mvno-admin-DeviceTemplate-grid" class="w-100 overflow-auto mt-2">
-                            @(Html.Kendo().Grid<mvno_admin.Models.DeviceInventoryModel>()
+                            @(Html.Kendo().Grid<mvno_admin.Models.DeviceInventoryTemplateModel>()
                              .Name("DeviceTemplates_Grid")
                              .Columns(columns =>
                              {
-                                 columns.Bound(s => s.ILEC).Title("ILEC Request");
+                                 columns.Bound(s => s.RateTemplateId).Title("Rate Template Id");
                                  columns.Bound(s => s.CLEC).Title("CLEC");
-                                 columns.Bound(s => s.DeviceId).Title("Device Id");
-                                 columns.Bound(s => s.OrderId).Title("Order Id");
-                                 columns.Bound(s => s.ESN).Title("ESN");
-                                 columns.Bound(s => s.Status).Title("Status");
-                                 columns.Bound(s => s.UICC).Title("UICC");
-                                 columns.Bound(s => s.MSL).Title("MSL");
+                                 columns.Bound(s => s.Manufacturer).Title("Make/Manufacturer");
+                                 columns.Bound(s => s.ModelNumber).Title("Model Number");
+                                 columns.Bound(s => s.Name).Title("Name");
+                                 columns.Bound(s => s.MarketPrice).Title("Market Price");
+                                 columns.Bound(s => s.MarketPriceDescription).Title("Market Price Description");
+                                 columns.Bound(s => s.Discount).Title("Discount");
+                                 //columns.Command(command => command.Destroy()).Width(150);
+
                              })
                              .Sortable()
                              .DataSource(dataSource => dataSource
                                  .Ajax()
                                  .PageSize(20)
-                                 .Read(read => read.Action("GetDeviceInventoryList", "DeviceInventory"))
+                                 .Read(read => read.Action("GetDeviceInventoryTemplateList", "DeviceInventory"))
                              )
                              //.Events(events => events.DataBound("onGridDataBound"))
                              )
-    </div>
+                    </div>
               </text>);
             })
         )
