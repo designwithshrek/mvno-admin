@@ -54,14 +54,32 @@
               .Content(@<text>
                     <section id="mvno-admin-view-message-actions">
                         <div class="d-flex align-items-center flex-nowrap">
-                            <div class="flex-fill">
-                                 <button class="btn btn-primary" name="viewAllMessages" id="btnViewAllMessages" type="button">
+                            <div class="flex-fill" id="viewAllMessagesSection">
+                            <button class="btn btn-primary" name="viewAllMessages" id="btnViewAllMessages" type="button">
                                  View All Messages
                              </button>
                             </div>
-                             <div class="flex-fill">
-                                 <div id="daterangepicker" title="daterangepicker"></div>
-                             </div>
+
+                            <div id="additionalOptions" class="d-none flex-fill">
+                                <div class="col-sm-3">
+                                    <div class="form-group">
+                                        <select id="kendoDropdown"></select>
+                                    </div>
+                                </div>
+                                <div class="col-sm-1">
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <div id="daterangepicker" title="daterangepicker"></div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                     <button class="btn btn-primary" name="searchMessages" id="btnSearchMessages" type="button">
+                                     Search
+                                  </button>
+                                </div>
+
+                            </div>
                             <div class="flex-grow-0">
                                 <button class="btn">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
@@ -143,7 +161,27 @@
 
                     <section id="mvno-admin-message-received-actions">
                             <div class="d-flex align-items-center flex-nowrap">
-                                <div class="flex-fill">
+                                <div class="flex-fill d-lg-flex">
+                                    <div class="col-sm-3">
+                                        <div class="form-group">
+                                            <div id="receivedMessageRangePicker" title="daterangepicker"></div>
+                                        </div>
+                                    </div>
+                                     <div class="col-sm-1"></div>
+                                    <div class="col-sm-3">
+                                        <div class="form-group">
+                                            @(Html.Kendo().TextBox()
+                                            .Name("MDN")
+                                            .Placeholder("MDN")
+                                            )
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-1"> </div>
+                                    <div class="col-sm-4">
+                                         <button class="btn btn-primary" name="searchReceivedMessages" id="btnSearchReceivedMessages" type="button">
+                                         Search
+                                      </button>
+                                    </div>
                                 </div>
                                 <div class="flex-grow-0">
                                     <button class="btn">
@@ -210,6 +248,35 @@
                 "startLabel": "Date-In",
                 "endLabel": "Date-Out"
             }
+        });
+        $("#receivedMessageRangePicker").kendoDateRangePicker({
+            "messages": {
+                "startLabel": "Date-In",
+                "endLabel": "Date-Out"
+            }
+        });
+
+        $("#btnViewAllMessages").click(function () {
+            $("#additionalOptions").addClass("d-lg-flex")
+            $("#additionalOptions").toggleClass("d-none");
+            $("#viewAllMessagesSection").addClass("d-none");
+        });
+
+        var tabstrip = $("#tabstrip").data("kendoTabStrip");
+        tabstrip.bind("select", function (e) {
+            var x = e.item;
+            selectedTabStripIndex = $(x).index();
+            if (selectedTabStripIndex === 0) {
+                $("#viewAllMessagesSection").removeClass("d-none");
+                $("#additionalOptions").removeClass("d-lg-flex")
+                $("#additionalOptions").toggleClass("d-none");
+            }
+        });
+
+        $("#kendoDropdown").kendoDropDownList({
+            dataSource: ["Option 1", "Option 2", "Option 3"],
+            optionLabel: "MDN"
+            // Other configuration options as needed
         });
     });
 
