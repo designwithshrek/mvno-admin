@@ -244,11 +244,16 @@
     <Compile Include="Controllers\DeviceInventoryController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\PackagesController.cs" />
+    <Compile Include="Controllers\ToolsController.cs" />
     <Compile Include="Controllers\UserManagement.cs" />
     <Compile Include="Controllers\SubscribersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\DeviceInventorySimModel.cs" />
+    <Compile Include="Models\DeviceInventoryTemplateModel.cs" />
+    <Compile Include="Models\MassTextModel.cs" />
+    <Compile Include="Models\MassTextViewModel.cs" />
     <Compile Include="Models\PackagesModel.cs" />
     <Compile Include="Models\RolesModel.cs" />
     <Compile Include="Models\DeviceInventoryModel.cs" />
