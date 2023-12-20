@@ -5,13 +5,13 @@ namespace mvno_admin.Models
 {
     public class Users
     {
-        public Users(long userId, string username, string firstName, string lastName, string clec, string email, string roles)
+        public Users(long userId, string username, string firstName, string lastName, string company, string email, string roles)
         {
             this.userId = userId;
             this.username = username;
             this.firstName = firstName;
             this.lastName = lastName;
-            this.clec = clec;
+            this.company = company;
             this.email = email;
             this.roles = roles;
         }
@@ -19,7 +19,7 @@ namespace mvno_admin.Models
         public string username { get; set; }
         public string firstName { get; set; }
         public string lastName { get; set; }
-        public string clec { get; set; }
+        public string company { get; set; }
         public string email { get; set; }
         public string roles { get; set; }
     }
