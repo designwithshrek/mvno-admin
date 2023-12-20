@@ -1,3 +1,98 @@
 @{
-    ViewBag.Title = "Packages";
+    ViewBag.Title = "End User Packages";
 }
+
+<section id="mvno-admin-breadcrumb-actions" class="d-flex flex-nowrap align-items-center px-4 py-2">
+    <div class="flex-fill text-end">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb align-items-center justify-content-end m-0">
+                <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
+                <li class="breadcrumb-item active" aria-current="page">End User Packages</li>
+            </ol>
+        </nav>
+    </div>
+</section>
+
+
+<section id="mvno-admin-page-content" class="px-4">
+    <div class="card h-100">
+        <div class="card-body overflow-auto h-100">
+
+            <section class="h-100">
+                @(Html.Kendo().TabStrip()
+                        .Name("tabstrip")
+                        .HtmlAttributes(new { @class = "h-100" })
+                        .SelectedIndex(0)
+                        .Items(tabstrip =>
+                        {
+                            tabstrip.Add().Text("Packages").Content(@<text>
+
+                                <section id="mvno-admin-subscriber-actions">
+                                <div class="d-flex align-items-center flex-nowrap">
+                                    <div class="flex-fill">
+                                        <a href="/packages/createNewPackage" role="button" class="btn btn-primary">
+                                            Create New Packages
+                                        </a>
+                                    </div>
+                                    <div class="flex-grow-0">
+                                        <button class="btn">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
+                                                <path d="M14.5 3.5V7.5C14.5 7.76522 14.6054 8.01957 14.7929 8.20711C14.9804 8.39464 15.2348 8.5 15.5 8.5H19.5M14.5 3.5H7.5C6.96957 3.5 6.46086 3.71071 6.08579 4.08579C5.71071 4.46086 5.5 4.96957 5.5 5.5V19.5C5.5 20.0304 5.71071 20.5391 6.08579 20.9142C6.46086 21.2893 6.96957 21.5 7.5 21.5H12M14.5 3.5L19.5 8.5M19.5 8.5V13.5M14.5 19.5H21.5M21.5 19.5L18.5 16.5M21.5 19.5L18.5 22.5" stroke="#1B1565" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg>
+                                            <span>Export</span>
+                                        </button>
+
+                                    </div>
+                                </div>
+                            </section>
+
+                            <div id="mvno-admin-subsciber-grid" class="w-100 overflow-auto mt-2">
+                                @(Html.Kendo().Grid<mvno_admin.Models.Packages>()
+                                .Name("subscribersGrid")
+                                .Columns(columns =>
+                                {
+                                    columns.Bound(s => s.packageId).Title("Package ID");
+                                    columns.Bound(s => s.packageDescription).Title("Package Description");
+                                    columns.Bound(s => s.currentStateType).Title("Current State Type");
+                                    columns.Bound(s => s.orderCount).Title("Order Count");
+                                    columns.Bound(s => s.provider).Title("Provider");
+                                    columns.Bound(s => s.author).Title("Author");
+                                    columns.Bound(s => s.revisionDatetime).Title("Revision Datetime");
+                                    columns.Bound(s => s.ivrDescription).Title("IVR Description");
+                                })
+                                .Sortable()
+                                //.Pageable(pageable => pageable
+                                //    .PageSizes(new[] { 25, 50, 100, 200 })  // Specify the available page sizes
+                                //    .ButtonCount(5)
+                                //)
+                                .DataSource(dataSource => dataSource
+                                    .Ajax()
+                                    //.PageSize(20)
+                                    .Read(read => read.Action("GetPackagesList", "Packages"))
+                                )
+                                //.Events(events => events
+                                //    .DataBound("onGridDataBound")
+                                //)
+                                )
+                            </div>
+
+                            </text>);
+
+                            tabstrip.Add().Text("Topups").Content(@<text>
+
+                            </text>);
+
+                            tabstrip.Add().Text("SKU").Content(@<text>
+
+                            </text>);
+
+                            tabstrip.Add().Text("Agent Commission").Content(@<text>
+
+                            </text>);
+
+                        })
+                    )
+            </section>
+        </div>
+    </div>
+</section>

@@ -134,10 +134,25 @@
                     </div>
                     <div class="flex-grow-0">
                         <div class="d-flex gap-3 align-items-center">
+                            <!-- Company Selector -->
+                            <div class="form-floating" style="width: 180px;">
+                                @(Html.Kendo().DropDownList()
+                                     .Name("companySelector")
+                                     .DataTextField("Text")
+                                     .DataValueField("Value")
+                                     .OptionLabel("")
+                                     .Label(label =>
+                                     {
+                                         label.Content("Company");
+                                         label.Floating(true);
+                                     })
+                                     .HtmlAttributes(new { @class = "form-control" })
+                                 )
+                            </div>
                             <!-- Search -->
-                            <div class="mb-0">
-                                <label for="mvno-admin-search" class="form-label d-none">Search</label>
-                                <input type="text"  aria-label="Search" class="form-control" id="mvno-admin-search" placeholder="Search...">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" id="mvno-admin-search" placeholder="Search..." aria-label="Search">
+                                <label for="mvno-admin-search" class="form-label">Search</label> 
                             </div>
                             <!-- User Profile -->
                             <div class="dropdown">
