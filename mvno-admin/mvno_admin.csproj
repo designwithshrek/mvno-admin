@@ -242,6 +242,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AppController.cs" />
     <Compile Include="Controllers\DeviceInventoryController.cs" />
+    <Compile Include="Controllers\ReportsController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\PackagesController.cs" />
     <Compile Include="Controllers\ToolsController.cs" />
@@ -254,6 +255,7 @@
     <Compile Include="Models\DeviceInventoryTemplateModel.cs" />
     <Compile Include="Models\MassTextModel.cs" />
     <Compile Include="Models\MassTextViewModel.cs" />
+    <Compile Include="Models\InvoicesModel.cs" />
     <Compile Include="Models\PackagesModel.cs" />
     <Compile Include="Models\RolesModel.cs" />
     <Compile Include="Models\DeviceInventoryModel.cs" />
@@ -354,6 +356,7 @@
     <Content Include="Views\App\Devices\View\index.cshtml" />
     <Content Include="Views\App\User Management\index.cshtml" />
     <Content Include="Views\App\Packages\Add\index.cshtml" />
+    <Content Include="Views\App\Reports\List\Invoices.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\Site.css" />
