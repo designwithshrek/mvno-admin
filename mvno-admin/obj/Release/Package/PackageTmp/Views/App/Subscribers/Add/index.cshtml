@@ -1,0 +1,484 @@
+@{
+    ViewBag.Title = "Subscribers";
+}
+
+
+<section id="mvno-admin-breadcrumb-actions" class="d-flex flex-nowrap align-items-center px-4 py-2">
+    <div class="flex-fill">
+        <button class="btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
+                <path d="M8.5 21V20C8.5 19.4696 8.71071 18.9609 9.08579 18.5858C9.46086 18.2107 9.96957 18 10.5 18H14.5C15.0304 18 15.5391 18.2107 15.9142 18.5858C16.2893 18.9609 16.5 19.4696 16.5 20V21M17.5 10H19.5C20.0304 10 20.5391 10.2107 20.9142 10.5858C21.2893 10.9609 21.5 11.4696 21.5 12V13M3.5 13V12C3.5 11.4696 3.71071 10.9609 4.08579 10.5858C4.46086 10.2107 4.96957 10 5.5 10H7.5M10.5 13C10.5 13.5304 10.7107 14.0391 11.0858 14.4142C11.4609 14.7893 11.9696 15 12.5 15C13.0304 15 13.5391 14.7893 13.9142 14.4142C14.2893 14.0391 14.5 13.5304 14.5 13C14.5 12.4696 14.2893 11.9609 13.9142 11.5858C13.5391 11.2107 13.0304 11 12.5 11C11.9696 11 11.4609 11.2107 11.0858 11.5858C10.7107 11.9609 10.5 12.4696 10.5 13ZM15.5 5C15.5 5.53043 15.7107 6.03914 16.0858 6.41421C16.4609 6.78929 16.9696 7 17.5 7C18.0304 7 18.5391 6.78929 18.9142 6.41421C19.2893 6.03914 19.5 5.53043 19.5 5C19.5 4.46957 19.2893 3.96086 18.9142 3.58579C18.5391 3.21071 18.0304 3 17.5 3C16.9696 3 16.4609 3.21071 16.0858 3.58579C15.7107 3.96086 15.5 4.46957 15.5 5ZM5.5 5C5.5 5.53043 5.71071 6.03914 6.08579 6.41421C6.46086 6.78929 6.96957 7 7.5 7C8.03043 7 8.53914 6.78929 8.91421 6.41421C9.28929 6.03914 9.5 5.53043 9.5 5C9.5 4.46957 9.28929 3.96086 8.91421 3.58579C8.53914 3.21071 8.03043 3 7.5 3C6.96957 3 6.46086 3.21071 6.08579 3.58579C5.71071 3.96086 5.5 4.46957 5.5 5Z" stroke="#1B1565" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <span>Subscriber Management</span>
+        </button>
+
+        <button type="button" class="btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M14 17H20M17 14V20M4 5C4 4.73478 4.10536 4.48043 4.29289 4.29289C4.48043 4.10536 4.73478 4 5 4H9C9.26522 4 9.51957 4.10536 9.70711 4.29289C9.89464 4.48043 10 4.73478 10 5V9C10 9.26522 9.89464 9.51957 9.70711 9.70711C9.51957 9.89464 9.26522 10 9 10H5C4.73478 10 4.48043 9.89464 4.29289 9.70711C4.10536 9.51957 4 9.26522 4 9V5ZM14 5C14 4.73478 14.1054 4.48043 14.2929 4.29289C14.4804 4.10536 14.7348 4 15 4H19C19.2652 4 19.5196 4.10536 19.7071 4.29289C19.8946 4.48043 20 4.73478 20 5V9C20 9.26522 19.8946 9.51957 19.7071 9.70711C19.5196 9.89464 19.2652 10 19 10H15C14.7348 10 14.4804 9.89464 14.2929 9.70711C14.1054 9.51957 14 9.26522 14 9V5ZM4 15C4 14.7348 4.10536 14.4804 4.29289 14.2929C4.48043 14.1054 4.73478 14 5 14H9C9.26522 14 9.51957 14.1054 9.70711 14.2929C9.89464 14.4804 10 14.7348 10 15V19C10 19.2652 9.89464 19.5196 9.70711 19.7071C9.51957 19.8946 9.26522 20 9 20H5C4.73478 20 4.48043 19.8946 4.29289 19.7071C4.10536 19.5196 4 19.2652 4 19V15Z" stroke="#1B1565" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <span>Create New Agent</span>
+        </button>
+    </div>
+    <div class="flex-grow-0">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb align-items-center justify-content-end m-0">
+                <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
+                <li class="breadcrumb-item"><a href="#">Subscribers</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Create New Subscriber</li>
+            </ol>
+        </nav>
+    </div>
+</section>
+
+
+<section id="mvno-admin-page-content" class="px-4">
+    <div class="d-flex h-100 gap-4">
+        <div id="mvno-admin-create-subscriber-steps" class="flex-grow-0 flex-shrink-0">
+            <div class="card w-100 h-100">
+                <div class="card-body w-100 h-100">
+                    <h6 class="mb-3">Create New Application</h6>
+
+                    <ul>
+                        <li>
+                            <button class="btn btn-primary w-100 mb-4 text-start">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                                    <path d="M6.16797 19.349C6.41548 18.5252 6.92194 17.8032 7.61222 17.29C8.30249 16.7768 9.13982 16.4997 9.99997 16.5H14C14.8612 16.4997 15.6996 16.7774 16.3904 17.2918C17.0811 17.8062 17.5874 18.5298 17.834 19.355M3 12.5C3 13.6819 3.23279 14.8522 3.68508 15.9442C4.13738 17.0361 4.80031 18.0282 5.63604 18.864C6.47177 19.6997 7.46392 20.3626 8.55585 20.8149C9.64778 21.2672 10.8181 21.5 12 21.5C13.1819 21.5 14.3522 21.2672 15.4442 20.8149C16.5361 20.3626 17.5282 19.6997 18.364 18.864C19.1997 18.0282 19.8626 17.0361 20.3149 15.9442C20.7672 14.8522 21 13.6819 21 12.5C21 11.3181 20.7672 10.1478 20.3149 9.05585C19.8626 7.96392 19.1997 6.97177 18.364 6.13604C17.5282 5.30031 16.5361 4.63738 15.4442 4.18508C14.3522 3.73279 13.1819 3.5 12 3.5C10.8181 3.5 9.64778 3.73279 8.55585 4.18508C7.46392 4.63738 6.47177 5.30031 5.63604 6.13604C4.80031 6.97177 4.13738 7.96392 3.68508 9.05585C3.23279 10.1478 3 11.3181 3 12.5ZM9 10.5C9 11.2956 9.31607 12.0587 9.87868 12.6213C10.4413 13.1839 11.2044 13.5 12 13.5C12.7956 13.5 13.5587 13.1839 14.1213 12.6213C14.6839 12.0587 15 11.2956 15 10.5C15 9.70435 14.6839 8.94129 14.1213 8.37868C13.5587 7.81607 12.7956 7.5 12 7.5C11.2044 7.5 10.4413 7.81607 9.87868 8.37868C9.31607 8.94129 9 9.70435 9 10.5Z" stroke="#F9F9F9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                <span>Personal Info</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button class="btn w-100 mb-4 text-start">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                                    <path d="M14 3.5V7.5C14 7.76522 14.1054 8.01957 14.2929 8.20711C14.4804 8.39464 14.7348 8.5 15 8.5H19M14 3.5H7C6.46957 3.5 5.96086 3.71071 5.58579 4.08579C5.21071 4.46086 5 4.96957 5 5.5V19.5C5 20.0304 5.21071 20.5391 5.58579 20.9142C5.96086 21.2893 6.46957 21.5 7 21.5H17C17.5304 21.5 18.0391 21.2893 18.4142 20.9142C18.7893 20.5391 19 20.0304 19 19.5V8.5M14 3.5L19 8.5M9 9.5H10M9 13.5H15M9 17.5H15" stroke="#C3C6D1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                <span>Documents</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button class="btn w-100 mb-4 text-start">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                                    <path d="M6 21.5V19.5C6 18.4391 6.42143 17.4217 7.17157 16.6716C7.92172 15.9214 8.93913 15.5 10 15.5H12M22 16.5C22 20.5 19.5 22.5 18.5 22.5C17.5 22.5 15 20.5 15 16.5C16 16.5 17.5 16 18.5 15C19.5 16 21 16.5 22 16.5ZM8 7.5C8 8.56087 8.42143 9.57828 9.17157 10.3284C9.92172 11.0786 10.9391 11.5 12 11.5C13.0609 11.5 14.0783 11.0786 14.8284 10.3284C15.5786 9.57828 16 8.56087 16 7.5C16 6.43913 15.5786 5.42172 14.8284 4.67157C14.0783 3.92143 13.0609 3.5 12 3.5C10.9391 3.5 9.92172 3.92143 9.17157 4.67157C8.42143 5.42172 8 6.43913 8 7.5Z" stroke="#C3C6D1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                <span>Eligibility</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button class="btn w-100 mb-4 text-start">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                                    <path d="M6.16797 19.349C6.41548 18.5252 6.92194 17.8032 7.61222 17.29C8.30249 16.7768 9.13982 16.4997 9.99997 16.5H14C14.8612 16.4997 15.6996 16.7774 16.3904 17.2918C17.0811 17.8062 17.5874 18.5298 17.834 19.355M3 12.5C3 13.6819 3.23279 14.8522 3.68508 15.9442C4.13738 17.0361 4.80031 18.0282 5.63604 18.864C6.47177 19.6997 7.46392 20.3626 8.55585 20.8149C9.64778 21.2672 10.8181 21.5 12 21.5C13.1819 21.5 14.3522 21.2672 15.4442 20.8149C16.5361 20.3626 17.5282 19.6997 18.364 18.864C19.1997 18.0282 19.8626 17.0361 20.3149 15.9442C20.7672 14.8522 21 13.6819 21 12.5C21 11.3181 20.7672 10.1478 20.3149 9.05585C19.8626 7.96392 19.1997 6.97177 18.364 6.13604C17.5282 5.30031 16.5361 4.63738 15.4442 4.18508C14.3522 3.73279 13.1819 3.5 12 3.5C10.8181 3.5 9.64778 3.73279 8.55585 4.18508C7.46392 4.63738 6.47177 5.30031 5.63604 6.13604C4.80031 6.97177 4.13738 7.96392 3.68508 9.05585C3.23279 10.1478 3 11.3181 3 12.5ZM9 10.5C9 11.2956 9.31607 12.0587 9.87868 12.6213C10.4413 13.1839 11.2044 13.5 12 13.5C12.7956 13.5 13.5587 13.1839 14.1213 12.6213C14.6839 12.0587 15 11.2956 15 10.5C15 9.70435 14.6839 8.94129 14.1213 8.37868C13.5587 7.81607 12.7956 7.5 12 7.5C11.2044 7.5 10.4413 7.81607 9.87868 8.37868C9.31607 8.94129 9 9.70435 9 10.5Z" stroke="#C3C6D1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                <span>Plan &amp; Device</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button class="btn w-100 mb-4 text-start">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                                    <path d="M3 10.5H21M7 15.5H7.01M11 15.5H13M3 8.5C3 7.70435 3.31607 6.94129 3.87868 6.37868C4.44129 5.81607 5.20435 5.5 6 5.5H18C18.7956 5.5 19.5587 5.81607 20.1213 6.37868C20.6839 6.94129 21 7.70435 21 8.5V16.5C21 17.2956 20.6839 18.0587 20.1213 18.6213C19.5587 19.1839 18.7956 19.5 18 19.5H6C5.20435 19.5 4.44129 19.1839 3.87868 18.6213C3.31607 18.0587 3 17.2956 3 16.5V8.5Z" stroke="#C3C6D1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                <span>Payments</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button class="btn w-100 mb-4 text-start">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                                    <path d="M3 19.5C6.333 17.5 8 15.5 8 13.5C8 10.5 7 10.5 6 10.5C5 10.5 3.968 11.585 4 13.5C4.034 15.548 5.658 16.377 6.5 17.5C8 19.5 9 20 10 18.5C10.667 17.5 11.167 16.667 11.5 16C12.5 18.333 13.833 19.5 15.5 19.5H18M18 19.5L16 17.5V5.5C16 4.379 16.879 3.5 18 3.5C19.121 3.5 20 4.379 20 5.5V17.5L18 19.5ZM16 7.5H20" stroke="#C3C6D1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                <span>Enroll</span>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="flex-fill">
+            <div class="card h-100">
+                <div class="card-body overflow-auto h-100">
+                    <section id="mvno-admin-personal-info">
+
+                        <!-- Personal Info -->
+                        <fieldset>
+                            <legend>Personal Info</legend>
+                            <div class="container-fluid p-0">
+                                <div class="row">
+                                    <div class="col-3">
+                                        <div class="form-floating mb-3">
+                                            <input type="text" class="form-control" id="firstName" placeholder="First Name">
+                                            <label for="firstName">First Name</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-3">
+                                        <div class="form-floating mb-3">
+                                            <input type="text" class="form-control" id="middleName" placeholder="Middle Name">
+                                            <label for="middleName">Middle Name</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-3">
+                                        <div class="form-floating mb-3">
+                                            <input type="text" class="form-control" id="lastName" placeholder="Last Name">
+                                            <label for="lastName">Last Name</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-3">
+                                        <div class="form-floating mb-3">
+                                            @(Html.Kendo().DropDownList()
+                                             .Name("suffix")
+                                             .DataTextField("Text")
+                                             .DataValueField("Value")
+                                             .OptionLabel("")
+                                             .Label(label =>
+                                             {
+                                                 label.Content("Suffix");
+                                                 label.Floating(true);
+                                             })
+                                             .HtmlAttributes(new { @class = "form-control" })
+                                         )
+                                        </div>
+                                    </div>
+                                    <div class="col-3">
+                                        <div class="form-floating mb-3">
+                                            @(Html.Kendo().DatePicker()
+                                            .Name("createdTo")
+                                            .Format("dd-MM-yyyy")
+                                            .Min(DateTime.Today)
+                                            .Label(label =>
+                                            {
+                                                label.Content("DOB");
+                                                label.Floating(true);
+                                            })
+                                            .HtmlAttributes(new { @placeholder = "dd-mm-yyyy" })
+                                            )
+                                        </div>
+                                    </div>
+                                    <div class="col-3">
+                                        <div class="form-floating mb-3">
+                                            <input type="text" class="form-control" id="phone" placeholder="phone">
+                                            <label for="phone">Phone</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-3">
+                                        <div class="form-floating mb-3">
+                                            <input type="text" class="form-control" id="externalId" placeholder="External ID">
+                                            <label for="externalId">External ID</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="d-flex align-items-center gap-4 mb-4">
+                                            <div>
+                                                @(Html.Kendo().CheckBox()
+                                                    .Name("LifelineProgram")
+                                                    .Label("Lifeline Program")
+                                                    .Value("LifelineProgram")
+                                                    .Checked(false)
+                                                )
+                                            </div>
+                                            <div>
+                                                @(Html.Kendo().CheckBox()
+                                                    .Name("isNonETC")
+                                                    .Label("Is Non ETC")
+                                                    .Value("isNonETC")
+                                                    .Checked(false)
+                                                )
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 mb-3">
+                                        <div class="form-check form-switch">
+                                            <input class="form-check-input" type="checkbox" role="switch" id="alternadeId">
+                                            <label class="form-check-label" for="alternadeId">
+                                                <span>Alternate ID</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-3">
+                                        <div class="form-floating mb-3">
+                                            @(Html.Kendo().DropDownList()
+                                                 .Name("eligibilityProgram")
+                                                 .DataTextField("Text")
+                                                 .DataValueField("Value")
+                                                 .OptionLabel("")
+                                                 .Label(label =>
+                                                 {
+                                                     label.Content("Eligibility Program");
+                                                     label.Floating(true);
+                                                 })
+                                                 .HtmlAttributes(new { @class = "form-control" })
+                                             )
+                                        </div>
+                                    </div>
+                                    <div class="col-3">
+                                        <div class="form-floating mb-3">
+                                            <input type="text" class="form-control" id="ssn" placeholder="ssn">
+                                            <label for="ssn">SSN (Last 4 Digits)</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-3">
+                                        <div class="form-floating mb-3">
+                                            <input type="text" class="form-control" id="nvApplicatonID" placeholder="nvApplicatonID">
+                                            <label for="nvApplicatonID">NV Application ID</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-3">
+                                        <div class="form-floating mb-3">
+                                            <input type="text" class="form-control" id="tribalId" placeholder="tribalId">
+                                            <label for="tribalId">Tribal ID</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <!-- Address -->
+                        <fieldset>
+                            <legend>Address</legend>
+                            <div class="container-fluid p-0">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <h6>Registered Address</h6>
+                                    </div>
+                                    <div class="col-3">
+                                        <div class="form-floating mb-3">
+                                            <input type="text" class="form-control" id="street" placeholder="Street Address">
+                                            <label for="street">Street Address</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-3">
+                                        <div class="form-floating mb-3">
+                                            <input type="text" class="form-control" id="apartmentSuite" placeholder="Apertment# or Suite#">
+                                            <label for="apartmentSuite">Apartment# or Suite#</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-3">
+                                        <div class="form-floating mb-3">
+                                            <input type="text" class="form-control" id="zipCode" placeholder="Zip Code">
+                                            <label for="zipCode">Zip Code</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-3">
+                                        <div class="form-floating mb-3">
+                                            <input type="text" class="form-control" id="city" placeholder="City">
+                                            <label for="city">City</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-3">
+                                        <div class="form-floating mb-3">
+                                            @(Html.Kendo().DropDownList()
+                                                     .Name("state")
+                                                     .DataTextField("Text")
+                                                     .DataValueField("Value")
+                                                     .OptionLabel("")
+                                                     .Label(label =>
+                                                     {
+                                                         label.Content("State");
+                                                         label.Floating(true);
+                                                     })
+                                                     .HtmlAttributes(new { @class = "form-control" })
+                                                 )
+                                        </div>
+                                    </div>
+
+                                    <div class="col-12 mt-4">
+                                        <h6>Mailing Address</h6>
+                                    </div>
+                                    <div class="col-3">
+                                        <div class="form-floating mb-3">
+                                            <input type="text" class="form-control" id="mStreet" placeholder="Street Address">
+                                            <label for="mStreet">Street Address</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-3">
+                                        <div class="form-floating mb-3">
+                                            <input type="text" class="form-control" id="mApartmentSuite" placeholder="Apertment# or Suite#">
+                                            <label for="mApartmentSuite">Apartment# or Suite#</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-3">
+                                        <div class="form-floating mb-3">
+                                            <input type="text" class="form-control" id="mZipCode" placeholder="Zip Code">
+                                            <label for="mZipCode">Zip Code</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-3">
+                                        <div class="form-floating mb-3">
+                                            <input type="text" class="form-control" id="mCity" placeholder="City">
+                                            <label for="mCity">City</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-3">
+                                        <div class="form-floating mb-3">
+                                            @(Html.Kendo().DropDownList()
+                                                 .Name("mState")
+                                                 .DataTextField("Text")
+                                                 .DataValueField("Value")
+                                                 .OptionLabel("")
+                                                 .Label(label =>
+                                                 {
+                                                     label.Content("State");
+                                                     label.Floating(true);
+                                                 })
+                                                 .HtmlAttributes(new { @class = "form-control" })
+                                             )
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <!-- Qualify  -->
+                        <fieldset>
+                            <legend>Qualify through Child or Dependent</legend>
+                            <div class="container-fluid p-0">
+                                <div class="row">
+                                    <div class="col-3">
+                                        <div class="form-floating mb-3">
+                                            <input type="text" class="form-control" id="bqpFirstName" placeholder="BQP First Name">
+                                            <label for="bqpFirstName">BQP First Name</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-3">
+                                        <div class="form-floating mb-3">
+                                            <input type="text" class="form-control" id="bqpMiddleName" placeholder="BQP Middle Name">
+                                            <label for="bqpMiddleName">BQP Middle Name</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-3">
+                                        <div class="form-floating mb-3">
+                                            <input type="text" class="form-control" id="bqpLastName" placeholder="BQP Last Name">
+                                            <label for="bqpLastName">BQP Last Name</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-3">
+                                        <div class="form-floating mb-3">
+                                            @(Html.Kendo().DropDownList()
+                                                 .Name("bqpSuffix")
+                                                 .DataTextField("Text")
+                                                 .DataValueField("Value")
+                                                 .OptionLabel("")
+                                                 .Label(label =>
+                                                 {
+                                                     label.Content("BQP Suffix");
+                                                     label.Floating(true);
+                                                 })
+                                                 .HtmlAttributes(new { @class = "form-control" })
+                                             )
+                                        </div>
+                                    </div>
+                                    <div class="col-3">
+                                        <div class="form-floating mb-3">
+                                            @(Html.Kendo().DatePicker()
+                                                .Name("bqpDob")
+                                                .Format("dd-MM-yyyy")
+                                                .Min(DateTime.Today)
+                                                .Label(label =>
+                                                {
+                                                    label.Content("BQP DOB");
+                                                    label.Floating(true);
+                                                })
+                                                .HtmlAttributes(new { @placeholder = "dd-mm-yyyy" })
+                                            )
+                                        </div>
+                                    </div>
+                                    <div class="col-3">
+                                        <div class="form-floating mb-3">
+                                            <input type="text" class="form-control" id="bqpSssn" placeholder="BQP SSN">
+                                            <label for="bqpSsn">BQP SSN (Last 4 Digits)</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="d-flex align-items-center gap-4 mb-4">
+                                            <div>
+                                                @(Html.Kendo().CheckBox()
+                                                    .Name("qualiyThroughChildDependent")
+                                                    .Label("Yes, I qualify thorugh child or dependent")
+                                                    .Value("qualiyThroughChildDependent")
+                                                    .Checked(false)
+                                                )
+                                            </div>
+                                            <div>
+                                                @(Html.Kendo().CheckBox()
+                                                    .Name("hasAltId")
+                                                    .Label("Has Alternate ID for BQP")
+                                                    .Value("hasAltId")
+                                                    .Checked(false)
+                                                )
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <!-- Coverage Info -->
+                        <fieldset>
+                            <legend>Coverage Info</legend>
+                            <div class="container-fluid p-0">
+                                <div class="row">
+                                    <div class="col">
+                                        <button type="button" class="btn btn-primary">Get Coverage</button>
+                                    </div>
+                                    <div class="col-3">
+                                        <div class="mb-0">
+                                            <label for="mvno-admin-search" class="form-label d-none">Search</label>
+                                            <input type="text" aria-label="Search" class="form-control" id="mvno-admin-search" placeholder="Search...">
+                                        </div>
+                                    </div>
+                                    <div class="col-12 mt-4">
+                                        <div class="w-100 overflow-auto">
+                                            @(Html.Kendo().Grid<mvno_admin.Models.Coverage>()
+                                            .Name("coverageGrid")
+                                            .Columns(columns =>
+                                            {
+                                                columns.Template(@<text></text>).ClientTemplate("<input type='checkbox' class='checkbox' />").HeaderTemplate("<input type='checkbox' class='check-all' />").Width(30);
+                                                columns.Bound(s => s.providerName).Title("Provider");
+                                                columns.Bound(s => s.HasCoverage).Title("Has Coverage");
+                                                columns.Bound(s => s.isValidAddress).Title("Is Valid Address");
+                                                columns.Bound(s => s.remarks).Title("Remarks");
+                                            })
+                                            .Sortable()
+                                            .DataSource(dataSource => dataSource
+                                                .Ajax()
+                                                .Read(read => read.Action("GetCoverageInfo", "Subscribers"))
+                                            )
+                                            )
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                    </section>
+
+
+                    <section id="mvno-admin-step-actions" class="pt-4 pb-3">
+                        <div class="container-fluid p-0">
+                            <div class="row align-items-center">
+                                <div class="col">
+                                    <button class="btn btn-outline-secondary">Reset</button>
+                                </div>
+                                <div class="col text-end">
+                                    <button class="btn btn-primary">Validate BYOD</button>
+                                    <button class="btn btn-primary">Save as Draft</button>
+                                    <button class="btn btn-primary">Next</button>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    $(document).ready(function () {
+
+        // Step Progress
+        // $("#ap-step-progress").data("kendoCircularProgressBar").value(0);
+
+        // Handle the "checkAll" checkbox change event
+        $('.check-all').change(function () {
+            var checked = $(this).is(':checked');
+            $('.checkbox').prop('checked', checked);
+        });
+    });
+</script>

@@ -1,0 +1,321 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --color-white: #fff;
+    --color-black: #000;
+    --theme-base: #1B1565;
+    --theme-dark: #0E094F;
+    --color-alt-light: #F9F9F9;
+    --color-dark: #212121;
+    --color-base: #1E293B
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    height: 100%;
+}
+
+body {
+    font: 1rem/1.5 'Source Sans 3', sans-serif;
+    background-color: var(--color-alt-light);
+    color: var(--color-base);
+    height: 100%;
+    min-width: 992px;
+    overflow: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--color-dark);
+}
+
+a {
+    color: var(--theme-base);
+    text-decoration: none;
+}
+
+    a:hover {
+        color: var(--theme-dark);
+        text-decoration: underline;
+    }
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+    ul li {
+        margin: 0;
+        padding: 0;
+    }
+
+.h-0 {
+    height: 0;
+}
+
+@media screen and (max-height: 600px) {
+    .h-0 {
+        height: auto;
+    }
+}
+
+#mvno-admin-content-wrapper {
+    height: calc(100% - 120px);
+    display: flex;
+    flex-direction: column;
+}
+
+#mvno-admin-nav {
+    background-color: var(--color-base);
+    width: 120px;
+    overflow: auto;
+}
+
+    #mvno-admin-nav a {
+        border-top: 1px solid rgba(255, 255, 255, .10);
+    }
+
+        #mvno-admin-nav a#mvno-admin-logo {
+            padding: 20px 0;
+        }
+
+        #mvno-admin-nav a,
+        #mvno-admin-nav a:hover {
+            color: var(--color-white);
+            text-decoration: none;
+            padding: 16px 0;
+        }
+
+#mvno-admin-header {
+    background-color: var(--color-white);
+    height: 80px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.025);
+    padding: 0 24px;
+    flex: 0 0 80px;
+}
+
+    #mvno-admin-header h1 {
+        margin: 0;
+        font-size: 24px;
+        font-weight: 700;
+    }
+
+.k-grid {
+    border: none;
+}
+
+    .k-grid table {
+        border: none;
+    }
+
+        .k-grid table .k-grid-header {
+            border: none;
+            border: 4px solid red;
+        }
+
+            .k-grid table .k-grid-header .k-table-row {
+                position: sticky;
+                top: 0;
+                border: none;
+                background-color: var(--color-alt-light);
+                z-index: 1;
+            }
+
+                .k-grid table .k-grid-header .k-table-row .k-table-th {
+                    border: none;
+                    padding: 12px 24px;
+                    font-weight: 600;
+                    color: var(--theme-base);
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    white-space: nowrap;
+                }
+
+                    .k-grid table .k-grid-header .k-table-row .k-table-th:first-child {
+                        position: sticky;
+                        left: 0;
+                        z-index: 1;
+                        background-color: var(--color-alt-light);
+                    }
+
+        .k-grid table .k-table-tbody {
+            border: none;
+        }
+
+            .k-grid table .k-table-tbody .k-table-row,
+            .k-grid table .k-table-tbody .k-table-row.k-table-alt-row {
+                border: none;
+                background-color: transparent;
+            }
+
+                .k-grid table .k-table-tbody .k-table-row:hover .k-table-td {
+                    color: var(--color-white);
+                    background-color: var(--theme-base);
+                    cursor: pointer;
+                }
+
+                .k-grid table .k-table-tbody .k-table-row .k-table-td {
+                    border: none;
+                    border-bottom: 1px solid var(--color-alt-light);
+                    padding: 12px 24px;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    background-color: var(--color-white);
+                }
+
+                    .k-grid table .k-table-tbody .k-table-row .k-table-td:first-child {
+                        position: sticky;
+                        left: 0;
+                    }
+
+
+
+#mvno-admin-breadcrumb-actions {
+    height: 64px;
+}
+
+    #mvno-admin-breadcrumb-actions + #mvno-admin-page-content {
+        height: calc(100% - 64px);
+    }
+
+#mvno-admin-page-content #mvno-admin-subscriber-actions {
+    height: 64px;
+    background-color: var(--color-white);
+    position: sticky;
+    top: -16px;
+    margin-top: -16px;
+    padding-top: 16px;
+}
+
+#mvno-admin-page-content #mvno-admin-subsciber-grid {
+    height: calc(100% - 64px);
+}
+
+.k-dropdownlist.form-control {
+    display: flex;
+    padding: 0;
+}
+
+    .k-dropdownlist.form-control:hover {
+        background-color: transparent;
+    }
+
+    .k-datepicker {
+        border-radius: 0.25rem;
+    }
+
+.k-datepicker .k-button {
+    background-color: transparent;
+    border-color: transparent;
+}
+
+.k-input,
+.k-dropdownlist {
+    height: calc(3.5rem + 2px);
+    background-color: #fff;
+    border-color: #ced4da;
+    color: inherit;
+}
+
+    .k-dropdownlist:focus,
+    .k-dropdownlist:hover {
+        background-color: #fff;
+        border-color: #ced4da;
+    }
+
+
+    .k-dropdownlist:focus {
+        box-shadow: 0 0 0 0.25rem rgba(13,110,253,.25);
+    }
+
+
+.k-input-md .k-input-inner {
+    padding-inline: .75rem;
+    padding-block: 1rem;
+    font-size: 16px;
+}
+
+.k-floating-label-container {
+    padding-top: 0;
+    width: 100%;
+}
+
+.k-floating-label-container.k-empty > .k-label {
+    top: calc(1rem + 1px);
+    left: calc(0.75rem + 1px);
+}
+
+.k-floating-label-container:focus-within > .k-label,
+.k-floating-label-container > .k-label,
+.k-floating-label-container.k-focus > .k-label {
+    top: 0;
+    opacity: .65;
+    left: calc(0.75rem + 1px);
+    transform: scale(.85);
+}
+
+.k-floating-label-container.k-empty:not(.k-focus) > .k-label {
+    opacity: 1;
+}
+
+.k-datepicker .k-input-button {
+    width: 58px;
+    cursor: text;
+    background-color: transparent;
+    border: none;
+}
+
+fieldset {
+    padding: 24px;
+    border: 1px solid #c3c6d1;
+    border-radius: 5px;
+}
+
+    fieldset ~ fieldset {
+        margin-top: 24px;
+    }
+
+    fieldset > legend {
+        color: var(--theme-base);
+        font-size: 0.875rem;
+        font-weight: 600;
+        float: none;
+        width: auto;
+        padding: 0 8px;
+        background-color: #fff;
+    }
+
+
+#mvno-admin-create-subscriber-steps {
+    flex: 0 0 300px;
+    width: 300px;
+    overflow: auto;
+}
+
+#mvno-admin-step-actions {
+    background-color: var(--color-white);
+    position: sticky;
+    bottom: -16px;
+    left: 0;
+    right: 0;
+    z-index: 999;
+}
+
+.btn-primary,
+.btn-primary:active,
+.btn-primary:focus {
+    background-color: var(--theme-base);
+    border-color: var(--theme-base)
+}
+
+.btn-primary:hover {
+    background-color: var(--theme-dark);
+    border-color: var(--theme-dark)
+}
