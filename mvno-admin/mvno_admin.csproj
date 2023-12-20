@@ -241,12 +241,14 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AppController.cs" />
+    <Compile Include="Controllers\DeviceInventoryController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\UserManagement.cs" />
     <Compile Include="Controllers\SubscribersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\DeviceInventoryModel.cs" />
     <Compile Include="Models\UsersModel.cs" />
     <Compile Include="Models\CoverageModel.cs" />
     <Compile Include="Models\SubscribersModel.cs" />
