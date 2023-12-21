@@ -18,6 +18,231 @@
 <section id="mvno-admin-page-content" class="px-4">
     <div class="card h-100">
         <div class="card-body overflow-auto h-100">
+
+            <section>
+
+            </section>
+
+            <section class="container-fluid">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="d-flex align-items-center gap-4 mb-4">
+                            <div>
+                                @(Html.Kendo().CheckBox()
+                                    .Name("tribal")
+                                    .Label("Tribal")
+                                    .Value("tribal")
+                                    .Checked(false)
+                                )
+                            </div>
+                            <div>
+                                @(Html.Kendo().CheckBox()
+                                    .Name("lifeLine")
+                                    .Label("Lifeline")
+                                    .Value("lifeLine")
+                                    .Checked(false)
+                                )
+                            </div>
+                            <div>
+                                @(Html.Kendo().CheckBox()
+                                    .Name("autoRefresh")
+                                    .Label("Auto Refresh")
+                                    .Value("autoRefresh")
+                                    .Checked(false)
+                                )
+                            </div>
+                            <div>
+                                @(Html.Kendo().CheckBox()
+                                    .Name("autoPaid")
+                                    .Label("Auto Paid")
+                                    .Value("autoPaid")
+                                    .Checked(false)
+                                )
+                            </div>
+                            <div>
+                                @(Html.Kendo().CheckBox()
+                                    .Name("needsCoverage")
+                                    .Label("Needs Coverage")
+                                    .Value("needsCoverage")
+                                    .Checked(false)
+                                )
+                            </div>
+                            <div>
+                                @(Html.Kendo().CheckBox()
+                                    .Name("topUp")
+                                    .Label("Topup")
+                                    .Value("topup")
+                                    .Checked(false)
+                                )
+                            </div>
+                            <div>
+                                @(Html.Kendo().CheckBox()
+                                    .Name("shared")
+                                    .Label("Shared")
+                                    .Value("shared")
+                                    .Checked(false)
+                                )
+                            </div>
+                            <div>
+                                @(Html.Kendo().CheckBox()
+                                    .Name("enabledForIVRPurchase")
+                                    .Label("Is Enabled For IVR Purchase?")
+                                    .Value("enabledForIVRPurchase")
+                                    .Checked(false)
+                                )
+                            </div>
+                            <div>
+                                @(Html.Kendo().CheckBox()
+                                    .Name("webPackage")
+                                    .Label("Web Package")
+                                    .Value("webPackage")
+                                    .Checked(false)
+                                )
+                            </div>
+                            <div>
+                                @(Html.Kendo().CheckBox()
+                                    .Name("acp")
+                                    .Label("ACP")
+                                    .Value("acp")
+                                    .Checked(false)
+                                )
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-floating mb-3">
+                            @(Html.Kendo().DropDownList()
+                                .Name("customerPackage")
+                                .DataTextField("Text")
+                                .DataValueField("Value")
+                                .OptionLabel("")
+                                .Label(label =>
+                                {
+                                    label.Content("Customer Package");
+                                    label.Floating(true);
+                                })
+                                .HtmlAttributes(new { @class = "form-control" })
+                            )
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="form-floating mb-3">
+                            <textarea style="height: 100px; resize: none" class="form-control" id="description" placeholder="Description"></textarea>
+                            <label for="description">Description</label>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-floating mb-3">
+                            @(Html.Kendo().DropDownList()
+                                .Name("lifeLineServiceType")
+                                .DataTextField("Text")
+                                .DataValueField("Value")
+                                .OptionLabel("")
+                                .Label(label =>
+                                {
+                                    label.Content("Lifeline Service Type");
+                                    label.Floating(true);
+                                })
+                                .HtmlAttributes(new { @class = "form-control" })
+                            )
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" id="usage" placeholder="Usage">
+                            <label for="usage">Usage</label>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-floating mb-3">
+                            <textarea style="height: 100px; resize: none" class="form-control" id="zipCodes" placeholder="Zip Codes (CSV)"></textarea>
+                            <label for="zipCodes">Zip Codes (CSV)</label>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-floating mb-3">
+                            <textarea style="height: 100px; resize: none" class="form-control" id="ivrDescription" placeholder="IVR Description"></textarea>
+                            <label for="ivrDescription">IVR Description</label>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" id="packagePrice" placeholder="Package Price">
+                            <label for="packagePrice">Package Price</label>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-floating mb-3">
+                            @(Html.Kendo().DropDownList()
+                                .Name("billCycle")
+                                .DataTextField("Text")
+                                .DataValueField("Value")
+                                .OptionLabel("")
+                                .Label(label =>
+                                {
+                                    label.Content("Bill Cycle");
+                                    label.Floating(true);
+                                })
+                                .HtmlAttributes(new { @class = "form-control" })
+                            )
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-floating mb-3">
+                            @(Html.Kendo().DatePicker()
+                                .Name("initialBillDate")
+                                .Format("dd-MM-yyyy")
+                                .Min(DateTime.Today)
+                                .Label(label =>
+                                {
+                                    label.Content("Initial Bill Date");
+                                    label.Floating(true);
+                                })
+                                .HtmlAttributes(new { @placeholder = "dd-mm-yyyy" })
+                            )
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-floating mb-3">
+                            @(Html.Kendo().DropDownList()
+                                .Name("state")
+                                .DataTextField("Text")
+                                .DataValueField("Value")
+                                .OptionLabel("")
+                                .Label(label =>
+                                {
+                                    label.Content("State");
+                                    label.Floating(true);
+                                })
+                                .HtmlAttributes(new { @class = "form-control" })
+                            )
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" id="packagePrice" placeholder="Package Price">
+                            <label for="packagePrice">Package Price</label>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-floating mb-3">
+                            @(Html.Kendo().DropDownList()
+                                .Name("billCycle")
+                                .DataTextField("Text")
+                                .DataValueField("Value")
+                                .OptionLabel("")
+                                .Label(label =>
+                                {
+                                    label.Content("Bill Cycle");
+                                    label.Floating(true);
+                                })
+                                .HtmlAttributes(new { @class = "form-control" })
+                            )
+                        </div>
+                    </div>
+                </div>
+            </section>
+
         </div>
     </div>
 </section>
