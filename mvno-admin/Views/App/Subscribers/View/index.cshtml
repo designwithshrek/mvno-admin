@@ -132,6 +132,22 @@
                 <fieldset>
                     <div class="container-fluid p-0">
                         <div class="row">
+                            <div class="col-2 offset-10">
+                                <div class="form-floating mb-4">
+                                    @(Html.Kendo().DropDownList()
+                                         .Name("nladAction")
+                                         .DataTextField("Text")
+                                         .DataValueField("Value")
+                                         .OptionLabel("")
+                                         .Label(label =>
+                                         {
+                                             label.Content("Select NLAD Action");
+                                             label.Floating(true);
+                                         })
+                                         .HtmlAttributes(new { @class = "form-control" })
+                                     )
+                                </div>
+                            </div>
                             <div class="col-3 mb-3">
                                 <small class="d-block">Is Lifeline</small>
                                 <strong>-</strong>
@@ -308,53 +324,53 @@
             <div class="modal-body">
                 <div class="container-fluid p-0">
                     <div class="row">
-                        <div class="col-3">
+                        <div class="col-6">
                             <div class="form-floating mb-3">
                                 <input type="text" class="form-control" id="firstName" placeholder="First Name">
                                 <label for="firstName">First Name</label>
                             </div>
                         </div>
-                        <div class="col-3">
+                        <div class="col-6">
                             <div class="form-floating mb-3">
                                 <input type="text" class="form-control" id="middleName" placeholder="Middle Name">
                                 <label for="middleName">Middle Name</label>
                             </div>
                         </div>
-                        <div class="col-3">
+                        <div class="col-6">
                             <div class="form-floating mb-3">
                                 <input type="text" class="form-control" id="lastName" placeholder="Last Name">
                                 <label for="lastName">Last Name</label>
                             </div>
                         </div>
-                        <div class="col-3">
+                        <div class="col-6">
                             <div class="form-floating mb-3">
                                 @(Html.Kendo().DropDownList()
-                 .Name("suffix")
-                 .DataTextField("Text")
-                 .DataValueField("Value")
-                 .OptionLabel("")
-                 .Label(label =>
-                 {
-                     label.Content("Suffix");
-                     label.Floating(true);
-                 })
-                 .HtmlAttributes(new { @class = "form-control" })
-             )
+                                     .Name("suffix")
+                                     .DataTextField("Text")
+                                     .DataValueField("Value")
+                                     .OptionLabel("")
+                                     .Label(label =>
+                                     {
+                                         label.Content("Suffix");
+                                         label.Floating(true);
+                                     })
+                                     .HtmlAttributes(new { @class = "form-control" })
+                                 )
                             </div>
                         </div>
-                        <div class="col-3">
+                        <div class="col-6">
                             <div class="form-floating mb-3">
                                 @(Html.Kendo().DatePicker()
-                .Name("createdTo")
-                .Format("dd-MM-yyyy")
-                .Min(DateTime.Today)
-                .Label(label =>
-                {
-                    label.Content("DOB");
-                    label.Floating(true);
-                })
-                .HtmlAttributes(new { @placeholder = "dd-mm-yyyy" })
-                )
+                                .Name("createdTo")
+                                .Format("dd-MM-yyyy")
+                                .Min(DateTime.Today)
+                                .Label(label =>
+                                {
+                                    label.Content("DOB");
+                                    label.Floating(true);
+                                })
+                                .HtmlAttributes(new { @placeholder = "dd-mm-yyyy" })
+                                )
                             </div>
                         </div>
                         <div class="col-6">
@@ -436,7 +452,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Update</button>
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Update</button>
             </div>
         </div>
     </div>

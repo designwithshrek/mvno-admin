@@ -106,6 +106,17 @@ ul {
         font-weight: 700;
     }
 
+.mvno-grid-wrapper .k-grid{
+    height: 100%;
+    overflow: auto;
+}
+
+.mvno-grid-wrapper .k-grid .k-grid-pager {
+    position: sticky;
+    bottom: 0;
+    left: 0;
+}
+
 .k-grid {
     border: none;
 }
@@ -288,7 +299,7 @@ fieldset {
         font-weight: 600;
         float: none;
         width: auto;
-        padding: 0 8px;
+        padding: 0 24px;
         background-color: #fff;
     }
 
@@ -299,18 +310,21 @@ fieldset {
     overflow: auto;
 }
 
-#mvno-admin-step-actions {
+.mvno-admin-step-actions {
     background-color: var(--color-white);
     position: sticky;
     bottom: -16px;
     left: 0;
     right: 0;
     z-index: 999;
+    padding: 24px 0 16px 0;
 }
 
 .btn-primary,
 .btn-primary:active,
-.btn-primary:focus {
+.btn-primary:focus,
+.btn-primary:disabled,
+.btn-primary[disabled] {
     background-color: var(--theme-base);
     border-color: var(--theme-base)
 }
@@ -319,3 +333,132 @@ fieldset {
     background-color: var(--theme-dark);
     border-color: var(--theme-dark)
 }
+
+#mvno-admin-progress-wrapper {
+    border-top: 1px solid #eaeaea;
+}
+
+#mvno-admin-step-progress-container {
+    width: 200px;
+    height: 200px;
+}
+
+
+#mvno-admin-application-progress h6 {
+    color: var(--theme-base);
+}
+
+#mvno-admin-step-progress {
+    width: 120px;
+    height: 120px;
+    margin: 16px auto;
+}
+
+#mvno-admin-application-progress circle,
+#mvno-admin-application-progress circle + path {
+    stroke-width: 16px;
+}
+
+    #mvno-admin-application-progress circle + path {
+        stroke: var(--theme-base);
+    }
+
+
+
+.mvno-admin-color-ineligible {
+    color: #c91f3c;
+}
+
+.mvno-admin-color-eligible {
+    color: #1aa723;
+}
+
+#mvno-admin-eligible label {
+    margin-left: 8px;
+    margin-top: -4px;
+}
+
+.mvno-admin-plan-container {
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(19, 23, 31, 0.07);
+    padding: 16px;
+}
+
+    .mvno-admin-plan-container .k-radio-label {
+        font-size: 1.250rem;
+        color: #1b1565;
+        font-weight: 600;
+        margin-left: 8px;
+    }
+
+    .mvno-admin-plan-container .mvno-admin-plan-details {
+        padding-left: 24px;
+    }
+
+        .mvno-admin-plan-container .mvno-admin-plan-details p {
+            margin: 16px 0;
+        }
+
+
+#mvno-admin-steps li:not(:last-child)::after {
+    content: '';
+    display: block;
+    height: 32px;
+    width: 6px;
+    border-radius: 4px;
+    background-color: var(--theme-base);
+    margin: 8px;
+}
+
+#mvno-admin-steps li .btn {
+    pointer-events: none;
+    background-color: var(--theme-base);
+    color: var(--color-white);
+}
+
+#mvno-admin-steps li.mvno-admin-step-active .btn{
+    background-color: var(--theme-base);
+    color: var(--color-white);
+}
+
+#mvno-admin-steps li.mvno-admin-step-active::after {
+    background-color: var(--theme-base);
+}
+
+#mvno-admin-steps li.mvno-admin-step-active ~ * .btn {
+    background-color: var(--color-alt-light);
+    color: var(--theme-base);
+}
+
+#mvno-admin-steps li.mvno-admin-step-active ~ *::after {
+    background-color: var(--color-alt-light);
+}
+
+
+.k-pager {
+    border: none;
+    background-color: var(--color-white);
+}
+
+    .k-pager .k-picker{
+        height: 40px;
+    }
+
+    .k-pager button {
+        border-radius: 50%;
+        color: var(--theme-base);
+    }
+
+    .k-pager button.k-selected {
+        background-color: #EEF2FF;
+        color: var(--theme-base);
+    }
+
+
+    .k-pager .k-pager-info {
+        order: 0;
+    }
+
+    .k-pager .k-pager-numbers-wrap {
+        order: 1;
+    }

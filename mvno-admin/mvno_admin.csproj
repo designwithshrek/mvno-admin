@@ -245,6 +245,12 @@
     <Compile Include="Controllers\ReportsController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\PackagesController.cs" />
+    <Compile Include="Controllers\Subscribers\DevicesController.cs" />
+    <Compile Include="Controllers\Subscribers\SIMSController.cs" />
+    <Compile Include="Controllers\Subscribers\PaymentsController.cs" />
+    <Compile Include="Controllers\Subscribers\OrdersController.cs" />
+    <Compile Include="Controllers\Subscribers\DocumentsController.cs" />
+    <Compile Include="Controllers\Subscribers\CoverageController.cs" />
     <Compile Include="Controllers\ToolsController.cs" />
     <Compile Include="Controllers\UserManagement.cs" />
     <Compile Include="Controllers\SubscribersController.cs" />
@@ -259,8 +265,13 @@
     <Compile Include="Models\PackagesModel.cs" />
     <Compile Include="Models\RolesModel.cs" />
     <Compile Include="Models\DeviceInventoryModel.cs" />
+    <Compile Include="Models\Subsribers\DevicesModel.cs" />
+    <Compile Include="Models\Subsribers\SIMSModel.cs" />
+    <Compile Include="Models\Subsribers\PaymentsModel.cs" />
+    <Compile Include="Models\Subsribers\OrdersModel.cs" />
+    <Compile Include="Models\Subsribers\DocumentsModel.cs" />
+    <Compile Include="Models\Subsribers\CoverageModel.cs" />
     <Compile Include="Models\UsersModel.cs" />
-    <Compile Include="Models\CoverageModel.cs" />
     <Compile Include="Models\SubscribersModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
