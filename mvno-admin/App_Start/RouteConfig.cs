@@ -32,6 +32,18 @@ namespace mvno_admin
             );
 
             routes.MapRoute(
+                name: "Reports",
+                url: "{controller}/{action}/{id}",
+                defaults: new { controller = "App", action = "Reports", id = UrlParameter.Optional }
+            );
+
+            routes.MapRoute(
+                name: "Invoices_Reports",
+                url: "{controller}/{action}/{id}",
+                defaults: new { controller = "Reports", action = "Invoices", id = UrlParameter.Optional }
+            );
+
+            routes.MapRoute(
                 name: "Subscribers",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Subscribers", action = "SubscribersList", id = UrlParameter.Optional }
