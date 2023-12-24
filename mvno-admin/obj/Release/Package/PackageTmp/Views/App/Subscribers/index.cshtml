@@ -2,6 +2,11 @@
     ViewBag.Title = "Subscribers";
 }
 
+<style type="text/css">
+    #mvno-admin-subsciber-grid {
+        height: calc(100% - 54px);
+    }
+</style>
 
 <section id="mvno-admin-breadcrumb-actions" class="d-flex flex-nowrap align-items-center px-4 py-2">
     <div class="flex-fill">
@@ -22,7 +27,7 @@
     <div class="flex-grow-0">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb align-items-center justify-content-end m-0">
-                <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
+                <li class="breadcrumb-item"><a href="/app/dashboards">Dashboard</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Subscribers</li>
             </ol>
         </nav>
@@ -33,8 +38,8 @@
 <section id="mvno-admin-page-content" class="px-4">
     <div class="card h-100">
         <div class="card-body h-100">
-            
-            <section id="mvno-admin-subscriber-actions">
+
+            <section id="mvno-admin-subscriber-actions" class="mb-2">
                 <div class="d-flex align-items-center flex-nowrap">
                     <div class="flex-fill">
                         <a href="/subscribers/createNewSubscriber" role="button" class="btn btn-primary">
@@ -61,7 +66,7 @@
                 </div>
             </section>
 
-            <div id="mvno-admin-subsciber-grid" class="w-100 overflow-auto">
+            <div id="mvno-admin-subsciber-grid" class="mvno-grid-wrapper w-100">
                 @(Html.Kendo().Grid<mvno_admin.Models.Subscribers>()
                 .Name("subscribersGrid")
                 .Columns(columns =>
@@ -80,10 +85,10 @@
                     columns.Bound(s => s.isTribal).Title("Is Tribal");
                 })
                 .Sortable()
-                //.Pageable(pageable => pageable
-                //    .PageSizes(new[] { 25, 50, 100, 200 })  // Specify the available page sizes
-                //    .ButtonCount(5)
-                //)
+                .Pageable(pageable => pageable
+                    .PageSizes(new[] { 25, 50, 100, 200 })
+                    .ButtonCount(5)
+                )
                 .DataSource(dataSource => dataSource
                     .Ajax()
                     .PageSize(20)

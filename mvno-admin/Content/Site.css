@@ -203,6 +203,7 @@ ul {
     top: -16px;
     margin-top: -16px;
     padding-top: 16px;
+    z-index: 999;
 }
 
 #mvno-admin-page-content #mvno-admin-subsciber-grid {
