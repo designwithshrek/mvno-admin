@@ -242,9 +242,13 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AppController.cs" />
     <Compile Include="Controllers\DeviceInventoryController.cs" />
+    <Compile Include="Controllers\Packages\AgentCommissionsController.cs" />
+    <Compile Include="Controllers\Packages\SKUController.cs" />
+    <Compile Include="Controllers\Packages\TopupsController.cs" />
+    <Compile Include="Controllers\Packages\EndUserPackagesController.cs" />
     <Compile Include="Controllers\ReportsController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
-    <Compile Include="Controllers\PackagesController.cs" />
+    <Compile Include="Controllers\Packages\PackagesController.cs" />
     <Compile Include="Controllers\Subscribers\DevicesController.cs" />
     <Compile Include="Controllers\Subscribers\NotesController.cs" />
     <Compile Include="Controllers\Subscribers\ReferralsController.cs" />
@@ -268,7 +272,10 @@
     <Compile Include="Models\MassTextModel.cs" />
     <Compile Include="Models\MassTextViewModel.cs" />
     <Compile Include="Models\InvoicesModel.cs" />
-    <Compile Include="Models\PackagesModel.cs" />
+    <Compile Include="Models\Packages\SKUModel.cs" />
+    <Compile Include="Models\Packages\AgentCommissionsModel.cs" />
+    <Compile Include="Models\Packages\TopupsModel.cs" />
+    <Compile Include="Models\Packages\PackagesModel.cs" />
     <Compile Include="Models\RolesModel.cs" />
     <Compile Include="Models\DeviceInventoryModel.cs" />
     <Compile Include="Models\Subscribers\DevicesModel.cs" />
@@ -300,6 +307,8 @@
     <Content Include="Content\bootstrap-utilities.min.css" />
     <Content Include="Content\bootstrap-utilities.rtl.css" />
     <Content Include="Content\bootstrap-utilities.rtl.min.css" />
+    <Content Include="Content\Login.css" />
+    <Content Include="Images\LoginBackground.jpg" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
@@ -380,15 +389,12 @@
     <Content Include="Views\App\Devices\Add\index.cshtml" />
     <Content Include="Views\App\Devices\View\index.cshtml" />
     <Content Include="Views\App\User Management\index.cshtml" />
-    <Content Include="Views\App\Packages\Add\index.cshtml" />
+    <Content Include="Views\App\Packages\Add\AddPackage.cshtml" />
     <Content Include="Views\App\Reports\List\Invoices.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\Site.css" />
     <Content Include="favicon.ico" />
-    <Content Include="Images\accent.png" />
-    <Content Include="Images\bullet.png" />
-    <Content Include="Images\heroAccent.png" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Shared\Error.cshtml" />

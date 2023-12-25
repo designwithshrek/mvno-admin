@@ -11,7 +11,8 @@ namespace mvno_admin.Controllers
         // GET: Login
         public ActionResult Index()
         {
-            return View();
+            ViewBag.Message = "Launched Login Page";
+            return View("~/Views/Login/Index.cshtml");
         }
     }
 }

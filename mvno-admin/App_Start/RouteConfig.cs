@@ -70,13 +70,13 @@ namespace mvno_admin
             routes.MapRoute(
                 name: "Packages",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Packages", action = "PackagesList", id = UrlParameter.Optional }
+                defaults: new { controller = "EndUserPackages", action = "Index", id = UrlParameter.Optional }
             );
 
             routes.MapRoute(
-                name: "Create_New_Package",
+                name: "Add_New_Package",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Packages", action = "CreateNewPackages", id = UrlParameter.Optional }
+                defaults: new { controller = "Packages", action = "AddNewPackage", id = UrlParameter.Optional }
             );
         }
     }
