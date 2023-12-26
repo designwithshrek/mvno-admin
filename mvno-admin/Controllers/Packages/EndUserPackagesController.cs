@@ -13,7 +13,15 @@ namespace mvno_admin.Controllers
 {
     public class EndUserPackagesController : Controller
     {
-        public ActionResult Index()
+
+        public ActionResult Packages()
+        {
+            ViewBag.Message = "Launched Packages Page";
+            return View("~/Views/App/Packages/Index.cshtml");
+
+        }
+
+        public ActionResult PackageViews()
         {
             ViewBag.Message = "Launched End User Packages Page With Packages Tab";
             return View("~/Views/App/Packages/Index.cshtml");

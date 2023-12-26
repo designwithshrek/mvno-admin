@@ -307,6 +307,7 @@
     <Content Include="Content\bootstrap-utilities.min.css" />
     <Content Include="Content\bootstrap-utilities.rtl.css" />
     <Content Include="Content\bootstrap-utilities.rtl.min.css" />
+    <Content Include="Content\App.css" />
     <Content Include="Content\Login.css" />
     <Content Include="Images\LoginBackground.jpg" />
     <Content Include="Scripts\bootstrap.bundle.js" />

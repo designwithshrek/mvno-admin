@@ -26,8 +26,8 @@ body {
     background-color: var(--color-alt-light);
     color: var(--color-base);
     height: 100%;
-    min-width: 992px;
-    overflow: hidden;
+    min-width: 1280px;
+    overflow: auto;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -65,57 +65,6 @@ ul {
     }
 }
 
-#mvno-admin-content-wrapper {
-    height: calc(100% - 120px);
-    display: flex;
-    flex-direction: column;
-}
-
-#mvno-admin-nav {
-    background-color: var(--color-base);
-    width: 120px;
-    overflow: auto;
-}
-
-    #mvno-admin-nav a {
-        border-top: 1px solid rgba(255, 255, 255, .10);
-    }
-
-        #mvno-admin-nav a#mvno-admin-logo {
-            padding: 20px 0;
-        }
-
-        #mvno-admin-nav a,
-        #mvno-admin-nav a:hover {
-            color: var(--color-white);
-            text-decoration: none;
-            padding: 16px 0;
-        }
-
-#mvno-admin-header {
-    background-color: var(--color-white);
-    height: 80px;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.025);
-    padding: 0 24px;
-    flex: 0 0 80px;
-}
-
-    #mvno-admin-header h1 {
-        margin: 0;
-        font-size: 24px;
-        font-weight: 700;
-    }
-
-.mvno-grid-wrapper .k-grid{
-    height: 100%;
-    overflow: auto;
-}
-
-.mvno-grid-wrapper .k-grid .k-grid-pager {
-    position: sticky;
-    bottom: 0;
-    left: 0;
-}
 
 .k-grid {
     border: none;
@@ -141,11 +90,11 @@ ul {
                 .k-grid table .k-grid-header .k-table-row .k-table-th {
                     border: none;
                     padding: 12px 24px;
-                    font-weight: 600;
                     color: var(--theme-base);
                     text-overflow: ellipsis;
                     overflow: hidden;
                     white-space: nowrap;
+                    font-weight: 700;
                 }
 
                     .k-grid table .k-grid-header .k-table-row .k-table-th:first-child {
@@ -166,9 +115,13 @@ ul {
             }
 
                 .k-grid table .k-table-tbody .k-table-row:hover .k-table-td {
-                    color: var(--color-white);
-                    background-color: var(--theme-base);
-                    cursor: pointer;
+                    background-color: var(--color-alt-light);
+                }
+
+                .k-grid table .k-table-tbody .k-table-row .k-table-td .btn {
+                    height: auto;
+                    font-weight: 600;
+                    color: var(--theme-base);
                 }
 
                 .k-grid table .k-table-tbody .k-table-row .k-table-td {
@@ -188,58 +141,40 @@ ul {
 
 
 
-#mvno-admin-breadcrumb-actions {
-    height: 64px;
-}
-
-    #mvno-admin-breadcrumb-actions + #mvno-admin-page-content {
-        height: calc(100% - 64px);
-    }
-
-#mvno-admin-page-content #mvno-admin-subscriber-actions {
-    height: 64px;
-    background-color: var(--color-white);
-    position: sticky;
-    top: -16px;
-    margin-top: -16px;
-    padding-top: 16px;
-    z-index: 999;
-}
-
-#mvno-admin-page-content #mvno-admin-subsciber-grid {
-    height: calc(100% - 64px);
-}
-
 .k-dropdownlist.form-control {
     display: flex;
     padding: 0;
+    height: 45px;
+    border-radius: 30px;
+    border-color: #CBD5E1;
 }
 
     .k-dropdownlist.form-control:hover {
         background-color: transparent;
     }
 
-    .k-datepicker {
-        border-radius: 0.25rem;
-    }
-
-.k-datepicker .k-button {
-    background-color: transparent;
-    border-color: transparent;
+.k-datepicker {
+    border-radius: 30px;
 }
+
+    .k-datepicker .k-button {
+        background-color: transparent;
+        border-color: transparent;
+    }
 
 .k-input,
 .k-dropdownlist {
-    height: calc(3.5rem + 2px);
-    background-color: #fff;
-    border-color: #ced4da;
+    height: 45px;
+    background-color: var(--color-white);
+    border-color: #CBD5E1;
     color: inherit;
+    border-radius: 30px;
 }
 
     .k-dropdownlist:focus,
     .k-dropdownlist:hover {
-        background-color: #fff;
-        border-color: #ced4da;
+        background-color: var(--color-white);
+        border-color: #CBD5E1;
     }
 
 
@@ -249,7 +184,7 @@ ul {
 
 
 .k-input-md .k-input-inner {
-    padding-inline: .75rem;
+    padding-inline: 1rem;
     padding-block: 1rem;
     font-size: 16px;
 }
@@ -259,23 +194,31 @@ ul {
     width: 100%;
 }
 
-.k-floating-label-container.k-empty > .k-label {
-    top: calc(1rem + 1px);
-    left: calc(0.75rem + 1px);
-}
+    .k-floating-label-container.k-empty > .k-label,
+    .k-floating-label-container:focus-within > .k-label,
+    .k-floating-label-container > .k-label,
+    .k-floating-label-container.k-focus > .k-label {
+        top: 0;
+        left: 0;
+        padding: 0 4px;
+        color: #A6ACBE;
+        font-size: 1rem;
+        background-color: var(--color-white);
+        margin-bottom: 0;
+        height: auto;
+        transform: translate(12px, 10px);
+        transition: transform 0.2s ease-out;
+    }
 
-.k-floating-label-container:focus-within > .k-label,
-.k-floating-label-container > .k-label,
-.k-floating-label-container.k-focus > .k-label {
-    top: 0;
-    opacity: .65;
-    left: calc(0.75rem + 1px);
-    transform: scale(.85);
-}
+    .k-floating-label-container:focus-within > .k-label,
+    .k-floating-label-container > .k-label,
+    .k-floating-label-container.k-focus > .k-label {
+        transform: translate(12px, -12px);
+    }
 
-.k-floating-label-container.k-empty:not(.k-focus) > .k-label {
-    opacity: 1;
-}
+    .k-floating-label-container.k-empty:not(.k-focus) > .k-label {
+        opacity: 1;
+    }
 
 .k-datepicker .k-input-button {
     width: 58px;
@@ -285,9 +228,10 @@ ul {
 }
 
 fieldset {
-    padding: 24px;
+    padding: 12px;
     border: 1px solid #c3c6d1;
     border-radius: 5px;
+    position: relative;
 }
 
     fieldset ~ fieldset {
@@ -300,25 +244,17 @@ fieldset {
         font-weight: 600;
         float: none;
         width: auto;
-        padding: 0 24px;
+        padding: 0 12px;
         background-color: #fff;
     }
 
 
-#mvno-admin-create-subscriber-steps {
-    flex: 0 0 300px;
-    width: 300px;
-    overflow: auto;
-}
 
-.mvno-admin-step-actions {
-    background-color: var(--color-white);
-    position: sticky;
-    bottom: -16px;
-    left: 0;
-    right: 0;
-    z-index: 999;
-    padding: 24px 0 16px 0;
+.btn {
+    border-radius: 30px;
+    height: 45px;
+    padding-left: 1rem;
+    padding-right: 1rem;
 }
 
 .btn-primary,
@@ -327,121 +263,20 @@ fieldset {
 .btn-primary:disabled,
 .btn-primary[disabled] {
     background-color: var(--theme-base);
-    border-color: var(--theme-base)
+    border-color: var(--theme-base);
 }
 
-.btn-primary:hover {
-    background-color: var(--theme-dark);
-    border-color: var(--theme-dark)
-}
-
-#mvno-admin-progress-wrapper {
-    border-top: 1px solid #eaeaea;
-}
-
-#mvno-admin-step-progress-container {
-    width: 200px;
-    height: 200px;
-}
-
-
-#mvno-admin-application-progress h6 {
-    color: var(--theme-base);
-}
-
-#mvno-admin-step-progress {
-    width: 120px;
-    height: 120px;
-    margin: 16px auto;
-}
-
-#mvno-admin-application-progress circle,
-#mvno-admin-application-progress circle + path {
-    stroke-width: 16px;
-}
-
-    #mvno-admin-application-progress circle + path {
-        stroke: var(--theme-base);
+    .btn-primary:hover {
+        background-color: var(--theme-dark);
+        border-color: var(--theme-dark)
     }
-
-
-
-.mvno-admin-color-ineligible {
-    color: #c91f3c;
-}
-
-.mvno-admin-color-eligible {
-    color: #1aa723;
-}
-
-#mvno-admin-eligible label {
-    margin-left: 8px;
-    margin-top: -4px;
-}
-
-.mvno-admin-plan-container {
-    border-radius: 20px;
-    box-shadow: 0 0 10px rgba(19, 23, 31, 0.07);
-    padding: 16px;
-}
-
-    .mvno-admin-plan-container .k-radio-label {
-        font-size: 1.250rem;
-        color: #1b1565;
-        font-weight: 600;
-        margin-left: 8px;
-    }
-
-    .mvno-admin-plan-container .mvno-admin-plan-details {
-        padding-left: 24px;
-    }
-
-        .mvno-admin-plan-container .mvno-admin-plan-details p {
-            margin: 16px 0;
-        }
-
-
-#mvno-admin-steps li:not(:last-child)::after {
-    content: '';
-    display: block;
-    height: 32px;
-    width: 6px;
-    border-radius: 4px;
-    background-color: var(--theme-base);
-    margin: 8px;
-}
-
-#mvno-admin-steps li .btn {
-    pointer-events: none;
-    background-color: var(--theme-base);
-    color: var(--color-white);
-}
-
-#mvno-admin-steps li.mvno-admin-step-active .btn{
-    background-color: var(--theme-base);
-    color: var(--color-white);
-}
-
-#mvno-admin-steps li.mvno-admin-step-active::after {
-    background-color: var(--theme-base);
-}
-
-#mvno-admin-steps li.mvno-admin-step-active ~ * .btn {
-    background-color: var(--color-alt-light);
-    color: var(--theme-base);
-}
-
-#mvno-admin-steps li.mvno-admin-step-active ~ *::after {
-    background-color: var(--color-alt-light);
-}
-
 
 .k-pager {
     border: none;
     background-color: var(--color-white);
 }
 
-    .k-pager .k-picker{
+    .k-pager .k-picker {
         height: 40px;
     }
 
@@ -450,10 +285,10 @@ fieldset {
         color: var(--theme-base);
     }
 
-    .k-pager button.k-selected {
-        background-color: #EEF2FF;
-        color: var(--theme-base);
-    }
+        .k-pager button.k-selected {
+            background-color: #EEF2FF;
+            color: var(--theme-base);
+        }
 
 
     .k-pager .k-pager-info {
@@ -463,3 +298,52 @@ fieldset {
     .k-pager .k-pager-numbers-wrap {
         order: 1;
     }
+
+
+
+.form-floating > .form-control {
+    padding: 0 1rem;
+    height: 45px;
+    border-radius: 30px;
+    border-color: #CBD5E1;
+}
+
+.form-floating > label {
+    padding: 0 4px;
+    color: #A6ACBE;
+    font-size: 1rem;
+    background-color: var(--color-white);
+    margin-bottom: 0;
+    height: auto;
+    transform: translate(12px, 10px);
+    transition: transform 0.2s ease-out;
+}
+
+.form-floating > .form-control:focus,
+.form-floating > .form-control:not(:placeholder-shown) {
+    padding: 0 1rem;
+}
+
+    .form-floating > .form-control:focus ~ label,
+    .form-floating > .form-control:not(:placeholder-shown) ~ label,
+    .form-floating > .form-select ~ label {
+        opacity: 1;
+        transform: translate(12px, -12px);
+    }
+
+.k-tabstrip-items-wrapper .k-tabstrip-items {
+    gap: 2px;
+}
+
+    .k-tabstrip-items-wrapper .k-tabstrip-items .k-tabstrip-item {
+        border-radius: 20px 20px 0px 0px;
+        background: #BFCAD8;
+        color: #F9F9F9;
+        font-weight: 700;
+    }
+
+.k-tabstrip-top > .k-tabstrip-items-wrapper .k-item:active,
+.k-tabstrip-top > .k-tabstrip-items-wrapper .k-item.k-active {
+    background: #E8E8F0;
+    color: #1B1565;
+}

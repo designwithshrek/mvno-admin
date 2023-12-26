@@ -7,7 +7,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
     <TimeStampOfAssociatedLegacyPublishXmlFile />
     <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAemyuDaGAvU+QHtKqjynYRwAAAAACAAAAAAAQZgAAAAEAACAAAADt2zfbnf330swq83Lm0Ub9wYHvDUNV+EolWuO7Vpr4JAAAAAAOgAAAAAIAACAAAAAwxy+Ic05SALYFWfv8WCplWisJStWTUrWnTYLrS53uLYAAAADDRdVlkpqrrIu/1w5Ht/aWc6RvMev8mYR8c4vWE8azYREi0EpaO8J0J+MK4YZ0RayyGxfV3OJ/Y3K5FV+BzAeTq+aJ5cRLu40jb7Npjg0m56pJgZwK5TAJA9LLvXAGl3RS5fpj9/t72h8QLda9mLOS6KICg+Wm8kuk04RNTJHNJEAAAAAFLqiYpW38N+q7cytau4e93rwRtuAmoioKGwaNEE2ehSv5P1lJRYjH4qr+pC/SK2QdfRXQhEt86haWTneHY4zr</EncryptedPassword>
     <_PublishTargetUrl>ftps://waws-prod-blu-459.ftp.azurewebsites.windows.net/site/wwwroot/mvno-admin</_PublishTargetUrl>
-    <History>True|2023-12-24T20:08:49.7747778Z;True|2023-12-20T00:34:35.9632655+01:00;True|2023-12-20T00:28:21.5344525+01:00;True|2023-12-20T00:14:24.6636556+01:00;False|2023-12-19T23:54:03.3043130+01:00;</History>
+    <History>True|2023-12-25T18:08:19.8974327Z;True|2023-12-24T21:08:49.7747778+01:00;True|2023-12-20T00:34:35.9632655+01:00;True|2023-12-20T00:28:21.5344525+01:00;True|2023-12-20T00:14:24.6636556+01:00;False|2023-12-19T23:54:03.3043130+01:00;</History>
     <LastFailureDetails />
   </PropertyGroup>
   <ItemGroup>
@@ -261,10 +261,10 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>11/14/2023 06:34:30</publishTime>
     </File>
     <File Include="bin/mvno_admin.dll">
-      <publishTime>12/24/2023 21:05:37</publishTime>
+      <publishTime>12/25/2023 19:05:41</publishTime>
     </File>
     <File Include="bin/mvno_admin.pdb">
-      <publishTime>12/24/2023 21:05:37</publishTime>
+      <publishTime>12/25/2023 19:05:41</publishTime>
     </File>
     <File Include="bin/nb-NO/Kendo.Mvc.resources.dll">
       <publishTime>11/14/2023 06:34:30</publishTime>
@@ -452,6 +452,9 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
     <File Include="Content/bootstrap.rtl.min.css.map">
       <publishTime>12/08/2023 19:10:42</publishTime>
     </File>
+    <File Include="Content/Login.css">
+      <publishTime>12/25/2023 13:24:39</publishTime>
+    </File>
     <File Include="Content/Site.css">
       <publishTime>12/24/2023 20:18:41</publishTime>
     </File>
@@ -469,6 +472,9 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
     </File>
     <File Include="Images/heroAccent.png">
       <publishTime>12/08/2023 19:09:04</publishTime>
+    </File>
+    <File Include="Images/LoginBackground.jpg">
+      <publishTime>12/25/2023 12:56:54</publishTime>
     </File>
     <File Include="libman.json">
       <publishTime>12/15/2023 14:22:45</publishTime>
@@ -564,16 +570,19 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>12/14/2023 20:27:51</publishTime>
     </File>
     <File Include="Views/App/Devices/index.cshtml">
-      <publishTime>12/24/2023 20:44:38</publishTime>
+      <publishTime>12/25/2023 12:53:15</publishTime>
     </File>
     <File Include="Views/App/Devices/View/index.cshtml">
       <publishTime>12/15/2023 15:01:42</publishTime>
+    </File>
+    <File Include="Views/App/Packages/Add/AddPackage.cshtml">
+      <publishTime>12/25/2023 18:54:34</publishTime>
     </File>
     <File Include="Views/App/Packages/Add/index.cshtml">
       <publishTime>12/21/2023 21:38:47</publishTime>
     </File>
     <File Include="Views/App/Packages/index.cshtml">
-      <publishTime>12/23/2023 14:18:41</publishTime>
+      <publishTime>12/25/2023 18:58:13</publishTime>
     </File>
     <File Include="Views/App/Port In/index.cshtml">
       <publishTime>12/09/2023 16:28:50</publishTime>
@@ -591,7 +600,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>12/21/2023 21:38:47</publishTime>
     </File>
     <File Include="Views/App/Subscribers/View/index.cshtml">
-      <publishTime>12/24/2023 20:15:16</publishTime>
+      <publishTime>12/25/2023 16:58:08</publishTime>
     </File>
     <File Include="Views/App/Support/index.cshtml">
       <publishTime>12/09/2023 16:30:52</publishTime>
@@ -606,7 +615,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>12/08/2023 19:26:40</publishTime>
     </File>
     <File Include="Views/Login/index.cshtml">
-      <publishTime>12/08/2023 19:40:02</publishTime>
+      <publishTime>12/25/2023 13:25:50</publishTime>
     </File>
     <File Include="Views/Login/_ViewStart.cshtml">
       <publishTime>12/08/2023 19:27:08</publishTime>
@@ -621,7 +630,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>12/08/2023 19:10:57</publishTime>
     </File>
     <File Include="Views/Shared/_LoginLayout.cshtml">
-      <publishTime>12/08/2023 19:35:35</publishTime>
+      <publishTime>12/25/2023 13:29:04</publishTime>
     </File>
     <File Include="Views/Web.config">
       <publishTime>12/08/2023 19:10:57</publishTime>
@@ -630,7 +639,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>12/08/2023 19:10:47</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>12/24/2023 21:05:42</publishTime>
+      <publishTime>12/25/2023 19:05:46</publishTime>
     </File>
   </ItemGroup>
 </Project>

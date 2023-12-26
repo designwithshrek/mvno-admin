@@ -36,14 +36,6 @@ namespace mvno_admin.Controllers
             return View("~/Views/App/Agents/Index.cshtml");
 
         }
-
-        public ActionResult Packages()
-        {
-            ViewBag.Message = "Launched Packages Page";
-            return View("~/Views/App/Packages/Index.cshtml");
-
-        }
-
         public ActionResult Devices()
         {
             ViewBag.Message = "Launched Devices Page";

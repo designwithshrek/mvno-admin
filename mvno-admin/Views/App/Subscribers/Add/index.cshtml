@@ -102,14 +102,14 @@
         </div>
         <div class="flex-fill">
             <div class="card h-100">
-                <div class="card-body overflow-auto h-100">
+                <div class="card-body overflow-auto h-100 py-0">
                     <!-- BEGIN: PERSONAL INFO -->
                     <section id="mvno-admin-personal-info" class="d-none flex-column h-100 mvno-admin-step-section">
                         <!-- Section Content -->
                         <section class="flex-fill">
                             <!-- Basic Info -->
-                            <fieldset>
-                                <legend>Basic Info</legend>
+                            <fieldset class="mt-2">
+                                <legend class="m-0">Basic Info</legend>
                                 <div class="container-fluid p-0">
                                     <div class="row">
                                         <!-- First Name -->
@@ -178,7 +178,7 @@
                                         </div>
                                         <div class="clearfix"></div>
                                         <!-- Primary Phone -->
-                                        <div class="col-12 col-md-6 col-xxl-4 mb-4">
+                                        <div class="col-12 col-md-6 col-xxl-4 mb-2">
                                             <div class="form-floating">
                                                 <input type="text" class="form-control" id="primaryPhone" placeholder="Primary Phone *" autocomplete="off" required>
                                                 <label for="primaryPhone">Primary Phone *</label>
@@ -188,14 +188,14 @@
                                             </div>
                                         </div>
                                         <!-- Secondary Phone -->
-                                        <div class="col-12 col-md-6 col-xxl-4 mb-4">
+                                        <div class="col-12 col-md-6 col-xxl-4 mb-2">
                                             <div class="form-floating">
                                                 <input type="text" class="form-control" id="secondaryPhone" placeholder="Secondary Phone" autocomplete="off">
                                                 <label for="secondaryPhone">Secondary Phone</label>
                                             </div>
                                         </div>
                                         <!-- External ID -->
-                                        <div class="col-12 col-md-6 col-xxl-4 mb-4">
+                                        <div class="col-12 col-md-6 col-xxl-4 mb-2">
                                             <div class="form-floating">
                                                 <input type="text" class="form-control" id="externalID" placeholder="External ID" autocomplete="off">
                                                 <label for="externalID">External ID</label>
@@ -206,7 +206,7 @@
                             </fieldset>
                             <!-- Govt. Benefits -->
                             <fieldset>
-                                <legend>Government Benefits</legend>
+                                <legend class="m-0">Government Benefits</legend>
                                 <div class="container-fluid p-0">
                                     <div class="row">
                                         <div class="col-12 col-md-auto mb-4">
@@ -217,8 +217,8 @@
                                                       .Value("startPlan")
                                                       .Checked(false)
                                                   )
-                                                <span data-bs-toggle="tooltip" data-bs-title="Tooltip Content Goes Here...">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22"><g transform="translate(-1 -1)"><circle cx="10" cy="10" r="10" transform="translate(2 2)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" /><line y1="4" transform="translate(12 12)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" /><line x2="0.01" transform="translate(12 8)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" /></g></svg>
+                                                <span data-bs-toggle="tooltip" data-bs-title="Tooltip Content Goes Here..." class="mx-1">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 22 22"><g transform="translate(-1 -1)"><circle cx="10" cy="10" r="10" transform="translate(2 2)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" /><line y1="4" transform="translate(12 12)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" /><line x2="0.01" transform="translate(12 8)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" /></g></svg>
                                                 </span>
                                             </span>
                                         </div>
@@ -231,8 +231,8 @@
                                                      .Value("startPlan")
                                                      .Checked(false)
                                                  )
-                                                <span data-bs-toggle="tooltip" data-bs-title="Tooltip Content Goes Here...">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22"><g transform="translate(-1 -1)"><circle cx="10" cy="10" r="10" transform="translate(2 2)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" /><line y1="4" transform="translate(12 12)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" /><line x2="0.01" transform="translate(12 8)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" /></g></svg>
+                                                <span data-bs-toggle="tooltip" data-bs-title="Tooltip Content Goes Here..." class="mx-1">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 22 22"><g transform="translate(-1 -1)"><circle cx="10" cy="10" r="10" transform="translate(2 2)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" /><line y1="4" transform="translate(12 12)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" /><line x2="0.01" transform="translate(12 8)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" /></g></svg>
                                                 </span>
                                             </span>
                                         </div>
@@ -241,8 +241,8 @@
                                             <div class="form-check form-switch">
                                                 <input class="form-check-input" type="checkbox" role="switch" id="alternateID">
                                                 <label class="form-check-label" for="alternateID">Alternate ID</label>
-                                                <span data-bs-toggle="tooltip" data-bs-title="Tooltip Content Goes Here...">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22"><g transform="translate(-1 -1)"><circle cx="10" cy="10" r="10" transform="translate(2 2)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" /><line y1="4" transform="translate(12 12)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" /><line x2="0.01" transform="translate(12 8)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" /></g></svg>
+                                                <span data-bs-toggle="tooltip" data-bs-title="Tooltip Content Goes Here..." class="mx-1">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 22 22"><g transform="translate(-1 -1)"><circle cx="10" cy="10" r="10" transform="translate(2 2)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" /><line y1="4" transform="translate(12 12)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" /><line x2="0.01" transform="translate(12 8)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" /></g></svg>
                                                 </span>
                                             </div>
                                         </div>
@@ -262,7 +262,7 @@
                                         </div>
                                         <div class="clearfix"></div>
                                         <!-- SSN (Last 4 Digits) -->
-                                        <div class="col-12 col-md-6 col-xxl-4 mb-4">
+                                        <div class="col-12 col-md-6 col-xxl-4 mb-2">
                                             <div class="form-floating">
                                                 <input type="text" class="form-control" id="ssn" placeholder="SSN (Last 4 Digits) *" autocomplete="off" required>
                                                 <label for="ssn">SSN (Last 4 Digits) *</label>
@@ -272,14 +272,14 @@
                                             </div>
                                         </div>
                                         <!-- NV Application ID -->
-                                        <div class="col-12 col-md-6 col-xxl-4 mb-4">
+                                        <div class="col-12 col-md-6 col-xxl-4 mb-2">
                                             <div class="form-floating">
                                                 <input type="text" class="form-control" id="nvAppID" placeholder="NV Application ID" autocomplete="off">
                                                 <label for="nvAppID">NV Application ID</label>
                                             </div>
                                         </div>
                                         <!-- Tribal ID -->
-                                        <div class="col-12 col-md-6 col-xxl-4 mb-4">
+                                        <div class="col-12 col-md-6 col-xxl-4 mb-2">
                                             <div class="form-floating">
                                                 <input type="text" class="form-control" id="tribalID" placeholder="Tribal ID" autocomplete="off">
                                                 <label for="tribalID">Tribal ID</label>
@@ -290,7 +290,7 @@
                             </fieldset>
                             <!-- Address -->
                             <fieldset>
-                                <legend>Address</legend>
+                                <legend class="m-0">Address</legend>
                                 <div class="container-fluid p-0">
                                     <div class="row">
                                         <div class="col-12">
@@ -334,7 +334,7 @@
                                             </div>
                                         </div>
                                         <!-- State Dropdown -->
-                                        <div class="col-12 col-md-6 col-xxl-4 mb-5">
+                                        <div class="col-12 col-md-6 col-xxl-4 mb-4">
                                             @(Html.Kendo().DropDownList()
                                                 .Name("stateDropdownRegistered")
                                                 .DataTextField("Text")
@@ -378,7 +378,7 @@
                                             </div>
                                         </div>
                                         <!-- City -->
-                                        <div class="col-12 col-md-6 col-xxl-4 mb-4">
+                                        <div class="col-12 col-md-6 col-xxl-4 mb-2">
                                             <div class="form-floating">
                                                 <input type="text" class="form-control" id="cityMA" placeholder="City *" autocomplete="off" required>
                                                 <label for="cityMA">City *</label>
@@ -388,7 +388,7 @@
                                             </div>
                                         </div>
                                         <!-- State Dropdown -->
-                                        <div class="col-12 col-md-6 col-xxl-4 mb-5">
+                                        <div class="col-12 col-md-6 col-xxl-4 mb-2">
                                             @(Html.Kendo().DropDownList()
                                                 .Name("stateDropdownMailing")
                                                 .DataTextField("Text")
@@ -406,7 +406,7 @@
                             </fieldset>
                             <!-- Is Qualify Through Child or Dependent -->
                             <fieldset>
-                                <legend>Is Qualified Through Child or Dependent</legend>
+                                <legend class="m-0">Is Qualified Through Child or Dependent</legend>
                                 <div class="container-fluid p-0">
                                     <div class="row">
                                         <!--  BQP First Name -->
@@ -420,14 +420,14 @@
                                             </div>
                                         </div>
                                         <!--  BQP Middle Name -->
-                                        <div class="col-12 col-md-6 col-xxl-4 mb-4">
+                                        <div class="col-12 col-md-6 col-xxl-4 mb-3">
                                             <div class="form-floating">
                                                 <input type="text" class="form-control" id="bqpMiddleName" placeholder="BQP Middle Name" autocomplete="off" required>
                                                 <label for="bqpMiddleName">BQP Middle Name</label>
                                             </div>
                                         </div>
                                         <!--  BQP Last Name -->
-                                        <div class="col-12 col-md-6 col-xxl-4 mb-4">
+                                        <div class="col-12 col-md-6 col-xxl-4 mb-3">
                                             <div class="form-floating">
                                                 <input type="text" class="form-control" id="bqpLastName" placeholder="BQP Last Name *" autocomplete="off" required>
                                                 <label for="bqpLastName">BQP Last Name *</label>
@@ -437,7 +437,7 @@
                                             </div>
                                         </div>
                                         <!-- Select Mame Suffix -->
-                                        <div class="col-12 col-md-6 col-xxl-4 mb-5">
+                                        <div class="col-12 col-md-6 col-xxl-4 mb-3">
                                             @(Html.Kendo().DropDownList()
                                                 .Name("BQPNameSuffix")
                                                 .DataTextField("Text")
@@ -445,13 +445,13 @@
                                                 .OptionLabel("")
                                                 .Label(label =>
                                                 {
-                                                    label.Content("Select Mame Suffix");
+                                                    label.Content("Select Name Suffix");
                                                     label.Floating(true);
                                                 })
                                             )
                                         </div>
                                         <!-- BQP Date of Birth -->
-                                        <div class="col-12 col-md-6 col-xxl-4 mb-4">
+                                        <div class="col-12 col-md-6 col-xxl-4 mb-2">
                                             @(Html.Kendo().DatePicker()
                                                 .Name("BQPDOB")
                                                 .Format("dd-MM-yyyy")
@@ -464,7 +464,7 @@
                                             )
                                         </div>
                                         <!-- BQP SSN (Last 4 Digits) -->
-                                        <div class="col-12 col-md-6 col-xxl-4 mb-4">
+                                        <div class="col-12 col-md-6 col-xxl-4 mb-2">
                                             <div class="form-floating">
                                                 <input type="text" class="form-control" id="ssnBQP" placeholder="SSN (Last 4 Digits) *" autocomplete="off" required>
                                                 <label for="ssnBQP">SSN (Last 4 Digits) *</label>
@@ -474,26 +474,26 @@
                                             </div>
                                         </div>
                                         <!-- Switch for Qualify-->
-                                        <div class="col-12 col-md-auto mb-4">
+                                        <div class="col-12 col-md-auto mb-24">
                                             <div class="form-check form-switch">
                                                 <input class="form-check-input" type="checkbox" role="switch" id="qualifiedDepChild">
                                                 <label class="form-check-label" for="qualifiedDepChild">
                                                     <span>Yes, I am qualify through child or dependent</span>
                                                 </label>
-                                                <span data-bs-toggle="tooltip" data-bs-title="Tooltip Content Goes Here...">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22"><g transform="translate(-1 -1)"><circle cx="10" cy="10" r="10" transform="translate(2 2)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" /><line y1="4" transform="translate(12 12)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" /><line x2="0.01" transform="translate(12 8)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" /></g></svg>
+                                                <span data-bs-toggle="tooltip" data-bs-title="Tooltip Content Goes Here..." class="mx-1">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 22 22"><g transform="translate(-1 -1)"><circle cx="10" cy="10" r="10" transform="translate(2 2)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" /><line y1="4" transform="translate(12 12)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" /><line x2="0.01" transform="translate(12 8)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" /></g></svg>
                                                 </span>
                                             </div>
                                         </div>
                                         <!-- BQP Alternate ID -->
-                                        <div class="col-12 col-md-auto mb-4">
+                                        <div class="col-12 col-md-auto mb-2">
                                             <div class="form-check form-switch">
                                                 <input class="form-check-input" type="checkbox" role="switch" id="bqpAlternateID">
                                                 <label class="form-check-label" for="bqpAlternateID">
                                                     <span>Has Alternate ID for BQP</span>
                                                 </label>
-                                                <span data-bs-toggle="tooltip" data-bs-title="Tooltip Content Goes Here...">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22"><g transform="translate(-1 -1)"><circle cx="10" cy="10" r="10" transform="translate(2 2)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" /><line y1="4" transform="translate(12 12)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" /><line x2="0.01" transform="translate(12 8)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" /></g></svg>
+                                                <span data-bs-toggle="tooltip" data-bs-title="Tooltip Content Goes Here..." class="mx-1">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 22 22"><g transform="translate(-1 -1)"><circle cx="10" cy="10" r="10" transform="translate(2 2)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" /><line y1="4" transform="translate(12 12)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" /><line x2="0.01" transform="translate(12 8)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" /></g></svg>
                                                 </span>
                                             </div>
                                         </div>
@@ -502,24 +502,24 @@
                             </fieldset>
                             <!-- Coverage Info -->
                             <fieldset>
-                                <legend>Coverage Info</legend>
+                                <legend class="m-0">Coverage Info</legend>
                                 <div class="container-fluid p-0">
                                     <div class="row">
                                         <!-- Select Coverage -->
-                                        <div class="col-12 col-md-auto mb-4">
+                                        <div class="col-12 col-md-auto mb-2">
                                             <strong>Select your coverage</strong>
-                                            <span data-bs-toggle="tooltip" data-bs-title="Tooltip Content Goes Here...">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22"><g transform="translate(-1 -1)"><circle cx="10" cy="10" r="10" transform="translate(2 2)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" /><line y1="4" transform="translate(12 12)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" /><line x2="0.01" transform="translate(12 8)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" /></g></svg>
+                                            <span data-bs-toggle="tooltip" data-bs-title="Tooltip Content Goes Here..." class="mx-1">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 22 22"><g transform="translate(-1 -1)"><circle cx="10" cy="10" r="10" transform="translate(2 2)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" /><line y1="4" transform="translate(12 12)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" /><line x2="0.01" transform="translate(12 8)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" /></g></svg>
                                             </span>
                                         </div>
                                         <!-- Get Coverage -->
-                                        <div class="col-12 mb-4">
+                                        <div class="col-12 mb-2">
                                             <button type="button" class="btn btn-primary">
                                                 Get Coverage
                                             </button>
                                         </div>
                                         <!-- Coverage Grid -->
-                                        <div class="col-12 mb-4">
+                                        <div class="col-12 mb-2">
                                             @(Html.Kendo().Grid<mvno_admin.Models.Coverage>()
                                                 .Name("CoverageGrid")
                                                 .DataSource(dataSource => dataSource
@@ -542,7 +542,7 @@
                             </fieldset>
                         </section>
                         <!-- Section Actions -->
-                        <section class="mvno-admin-step-actions flex-grow-0">
+                        <section class="mvno-admin-step-actions flex-grow-0 position-sticky bottom-0 py-3 bg-white">
                             <div class="container-fluid h-100 p-0">
                                 <div class="row h-100">
                                     <div class="col d-flex align-items-center">
@@ -562,7 +562,7 @@
                         <!-- Section Content -->
                         <section class="flex-fill">
                             <fieldset>
-                                <legend>Documents</legend>
+                                <legend class="m-0">Documents</legend>
                                 <div class="container-fluid p-0">
                                     <div class="row">
                                         <!-- APC Consent Form -->
@@ -648,7 +648,7 @@
                             </fieldset>
                         </section>
                         <!-- Section Actions -->
-                        <section class="mvno-admin-step-actions flex-grow-0">
+                        <section class="mvno-admin-step-actions flex-grow-0 position-sticky bottom-0 py-3 bg-white">
                             <div class="container-fluid h-100 p-0">
                                 <div class="row h-100">
                                     <div class="col d-flex align-items-center">
@@ -668,7 +668,7 @@
                         <!-- Section Contnet -->
                         <section class="flex-fill">
                             <fieldset>
-                                <legend>Eligibility</legend>
+                                <legend class="m-0">Eligibility</legend>
                                 <div class="container-fluid p-0">
                                     <div class="row">
                                         <div class="col">
@@ -697,7 +697,7 @@
                             </fieldset>
                         </section>
                         <!-- Section Actions -->
-                        <section class="mvno-admin-step-actions flex-grow-0">
+                        <section class="mvno-admin-step-actions flex-grow-0 position-sticky bottom-0 py-3 bg-white">
                             <div class="container-fluid h-100 p-0">
                                 <div class="row h-100">
                                     <div class="col d-flex align-items-center">
@@ -717,7 +717,7 @@
                         <!-- Section Content -->
                         <section class="flex-fill">
                             <fieldset class="overflow-auto">
-                                <legend>Plan</legend>
+                                <legend class="m-0">Plan</legend>
                                 <div class="container-fluid p-0">
                                     <div class="row flex-nowrap gx-0 m-0 gap-4">
                                         <!-- Plan 1 -->
@@ -855,7 +855,7 @@
                             </fieldset>
                             <!-- Device Details -->
                             <fieldset>
-                                <legend>Device</legend>
+                                <legend class="m-0">Device</legend>
                                 <div class="container-fluid p-0">
                                     <div class="row">
                                         <!-- Device Provided Date -->
@@ -939,7 +939,7 @@
                             </fieldset>
                         </section>
                         <!-- Section Actions -->
-                        <section class="mvno-admin-step-actions flex-grow-0">
+                        <section class="mvno-admin-step-actions flex-grow-0 position-sticky bottom-0 py-3 bg-white">
                             <div class="container-fluid h-100 p-0">
                                 <div class="row h-100">
                                     <div class="col d-flex align-items-center">
@@ -959,7 +959,7 @@
                         <!-- Section Content -->
                         <section class="flex-fill">
                             <fieldset>
-                                <legend>Payments</legend>
+                                <legend class="m-0">Payments</legend>
                                 <div class="container-fluid p-0">
                                     <div class="row">
                                         <div class="col-12 mb-4">
@@ -992,7 +992,7 @@
                             </fieldset>
                         </section>
                         <!-- Section Actions -->
-                        <section class="mvno-admin-step-actions flex-grow-0">
+                        <section class="mvno-admin-step-actions flex-grow-0 position-sticky bottom-0 py-3 bg-white">
                             <div class="container-fluid h-100 p-0">
                                 <div class="row h-100">
                                     <div class="col d-flex align-items-center">
@@ -1011,7 +1011,7 @@
                     <section id="mvno-admin-enroll" class="d-none flex-column h-100 mvno-admin-step-section">
                         <section class="flex-fill">
                             <fieldset>
-                                <legend>Enroll</legend>
+                                <legend class="m-0">Enroll</legend>
                                 <div class="container-fluid p-0">
                                     Orders
                                     <div class="row">
@@ -1047,7 +1047,7 @@
                             </fieldset>
                         </section>
                         <!-- Section Actions -->
-                        <section class="mvno-admin-step-actions flex-grow-0">
+                        <section class="mvno-admin-step-actions flex-grow-0 position-sticky bottom-0 py-3 bg-white">
                             <div class="container-fluid h-100 p-0">
                                 <div class="row h-100">
                                     <div class="col d-flex align-items-center">

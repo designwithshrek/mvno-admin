@@ -7,6 +7,7 @@
     <link href="https://kendo.cdn.telerik.com/themes/7.0.1/bootstrap/bootstrap-main.css" rel="stylesheet" type="text/css" />
     <link href="@Url.Content("~/Content/bootstrap.min.css")" rel="stylesheet" type="text/css" />
     <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/App.css")" rel="stylesheet" type="text/css" />
     <script src="@Url.Content("~/Scripts/popper.min.js")"></script>
     <script src="@Url.Content("~/Scripts/bootstrap.min.js")"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
@@ -31,7 +32,7 @@
                         </svg>
                     </a>
                 </li>
-                <li>
+                <li class="@(Url.RequestContext.HttpContext.Request.Path.StartsWith("/dashboard/") ? "mvno-admin-link-active" : "")">
                     <a href="/app/dashboards" class="d-flex flex-column justify-content-center align-items-center">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                             <g clip-path="url(#clip0_2_2350)">
@@ -49,7 +50,7 @@
                         <span>Dashboards</span>
                     </a>
                 </li>
-                <li>
+                <li class="@(Url.RequestContext.HttpContext.Request.Path.StartsWith("/tools/") ? "mvno-admin-link-active" : "")">
                     <a href="/app/tools" class="d-flex flex-column justify-content-center align-items-center">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                             <path d="M6 12C5.46957 12 4.96086 11.7893 4.58579 11.4142C4.21071 11.0391 4 10.5304 4 10C4 9.46957 4.21071 8.96086 4.58579 8.58579C4.96086 8.21071 5.46957 8 6 8M6 12C6.53043 12 7.03914 11.7893 7.41421 11.4142C7.78929 11.0391 8 10.5304 8 10C8 9.46957 7.78929 8.96086 7.41421 8.58579C7.03914 8.21071 6.53043 8 6 8M6 12V20M6 8V4M12 18C11.4696 18 10.9609 17.7893 10.5858 17.4142C10.2107 17.0391 10 16.5304 10 16C10 15.4696 10.2107 14.9609 10.5858 14.5858C10.9609 14.2107 11.4696 14 12 14M12 18C12.5304 18 13.0391 17.7893 13.4142 17.4142C13.7893 17.0391 14 16.5304 14 16C14 15.4696 13.7893 14.9609 13.4142 14.5858C13.0391 14.2107 12.5304 14 12 14M12 18V20M12 14V4M18 9C17.4696 9 16.9609 8.78929 16.5858 8.41421C16.2107 8.03914 16 7.53043 16 7C16 6.46957 16.2107 5.96086 16.5858 5.58579C16.9609 5.21071 17.4696 5 18 5M18 9C18.5304 9 19.0391 8.78929 19.4142 8.41421C19.7893 8.03914 20 7.53043 20 7C20 6.46957 19.7893 5.96086 19.4142 5.58579C19.0391 5.21071 18.5304 5 18 5M18 9V20M18 5V4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
@@ -57,7 +58,7 @@
                         <span>Tools</span>
                     </a>
                 </li>
-                <li>
+                <li class="@(Url.RequestContext.HttpContext.Request.Path.StartsWith("/reports/") ? "mvno-admin-link-active" : "")">
                     <a href="/app/reports" class="d-flex flex-column justify-content-center align-items-center">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                             <path d="M3 3V21H21M20 18V21M16 16V21M12 13V21M8 16V21M3 11C9 11 8 6 12 6C16 6 15 11 21 11" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
@@ -65,7 +66,7 @@
                         <span>Reports</span>
                     </a>
                 </li>
-                <li>
+                <li class="@(Url.RequestContext.HttpContext.Request.Path.StartsWith("/agents/") ? "mvno-admin-link-active" : "")">
                     <a href="/app/agents" class="d-flex flex-column justify-content-center align-items-center">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                             <path d="M6 9H12M4 5H8M6 5V16C6 16.2652 6.10536 16.5196 6.29289 16.7071C6.48043 16.8946 6.73478 17 7 17H12M12 8C12 7.73478 12.1054 7.48043 12.2929 7.29289C12.4804 7.10536 12.7348 7 13 7H19C19.2652 7 19.5196 7.10536 19.7071 7.29289C19.8946 7.48043 20 7.73478 20 8V10C20 10.2652 19.8946 10.5196 19.7071 10.7071C19.5196 10.8946 19.2652 11 19 11H13C12.7348 11 12.4804 10.8946 12.2929 10.7071C12.1054 10.5196 12 10.2652 12 10V8ZM12 16C12 15.7348 12.1054 15.4804 12.2929 15.2929C12.4804 15.1054 12.7348 15 13 15H19C19.2652 15 19.5196 15.1054 19.7071 15.2929C19.8946 15.4804 20 15.7348 20 16V18C20 18.2652 19.8946 18.5196 19.7071 18.7071C19.5196 18.8946 19.2652 19 19 19H13C12.7348 19 12.4804 18.8946 12.2929 18.7071C12.1054 18.5196 12 18.2652 12 18V16Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
@@ -73,8 +74,8 @@
                         <span>Agents</span>
                     </a>
                 </li>
-                <li>
-                    <a href="/app/packages" class="d-flex flex-column justify-content-center align-items-center">
+                <li class="@(Url.RequestContext.HttpContext.Request.Path.StartsWith("/EndUserPackages/") ? "mvno-admin-link-active" : "")">
+                    <a href="/EndUserPackages/PackageViews" class="d-flex flex-column justify-content-center align-items-center">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                             <path d="M19.875 6.26996C20.2187 6.46542 20.5041 6.74893 20.7018 7.09131C20.8995 7.4337 21.0025 7.82258 21 8.21796V15.502C21 16.311 20.557 17.057 19.842 17.45L13.092 21.72C12.7574 21.9037 12.3818 22 12 22C11.6182 22 11.2426 21.9037 10.908 21.72L4.158 17.45C3.80817 17.2588 3.51612 16.9771 3.31241 16.6344C3.1087 16.2917 3.0008 15.9006 3 15.502V8.21696C3 7.40796 3.443 6.66296 4.158 6.26996L10.908 2.28996C11.2525 2.09999 11.6396 2.00037 12.033 2.00037C12.4264 2.00037 12.8135 2.09999 13.158 2.28996L19.908 6.26996H19.875Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                             <path d="M15.5 9.42199C15.812 9.60199 16.003 9.93699 16 10.298V13.575C16 13.939 15.803 14.275 15.485 14.452L12.485 16.374C12.3366 16.4563 12.1697 16.4995 12 16.4995C11.8303 16.4995 11.6634 16.4563 11.515 16.374L8.515 14.452C8.35871 14.3653 8.22851 14.2383 8.13794 14.0843C8.04737 13.9302 7.99974 13.7547 8 13.576V10.298C8 9.93399 8.197 9.59799 8.514 9.42099L11.514 7.63099C11.825 7.45699 12.204 7.45699 12.514 7.63099L15.514 9.42099H15.5V9.42199Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
@@ -82,7 +83,7 @@
                         <span>Packages</span>
                     </a>
                 </li>
-                <li>
+                <li class="@(Url.RequestContext.HttpContext.Request.Path.StartsWith("/subscribers/") ? "mvno-admin-link-active" : "")">
                     <a href="/subscribers/subscribersList" class="d-flex flex-column justify-content-center align-items-center">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                             <path d="M8 21V20C8 19.4696 8.21071 18.9609 8.58579 18.5858C8.96086 18.2107 9.46957 18 10 18H14C14.5304 18 15.0391 18.2107 15.4142 18.5858C15.7893 18.9609 16 19.4696 16 20V21M17 10H19C19.5304 10 20.0391 10.2107 20.4142 10.5858C20.7893 10.9609 21 11.4696 21 12V13M3 13V12C3 11.4696 3.21071 10.9609 3.58579 10.5858C3.96086 10.2107 4.46957 10 5 10H7M10 13C10 13.5304 10.2107 14.0391 10.5858 14.4142C10.9609 14.7893 11.4696 15 12 15C12.5304 15 13.0391 14.7893 13.4142 14.4142C13.7893 14.0391 14 13.5304 14 13C14 12.4696 13.7893 11.9609 13.4142 11.5858C13.0391 11.2107 12.5304 11 12 11C11.4696 11 10.9609 11.2107 10.5858 11.5858C10.2107 11.9609 10 12.4696 10 13ZM15 5C15 5.53043 15.2107 6.03914 15.5858 6.41421C15.9609 6.78929 16.4696 7 17 7C17.5304 7 18.0391 6.78929 18.4142 6.41421C18.7893 6.03914 19 5.53043 19 5C19 4.46957 18.7893 3.96086 18.4142 3.58579C18.0391 3.21071 17.5304 3 17 3C16.4696 3 15.9609 3.21071 15.5858 3.58579C15.2107 3.96086 15 4.46957 15 5ZM5 5C5 5.53043 5.21071 6.03914 5.58579 6.41421C5.96086 6.78929 6.46957 7 7 7C7.53043 7 8.03914 6.78929 8.41421 6.41421C8.78929 6.03914 9 5.53043 9 5C9 4.46957 8.78929 3.96086 8.41421 3.58579C8.03914 3.21071 7.53043 3 7 3C6.46957 3 5.96086 3.21071 5.58579 3.58579C5.21071 3.96086 5 4.46957 5 5Z" stroke="#F9F9F9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
@@ -90,7 +91,7 @@
                         <span>Subscribers</span>
                     </a>
                 </li>
-                <li>
+                <li class="@(Url.RequestContext.HttpContext.Request.Path.StartsWith("/devices/") ? "mvno-admin-link-active" : "")">
                     <a href="/app/devices" class="d-flex flex-column justify-content-center align-items-center">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                             <path d="M6 8H6.01M9 8H9.01M3 7C3 6.46957 3.21071 5.96086 3.58579 5.58579C3.96086 5.21071 4.46957 5 5 5H19C19.5304 5 20.0391 5.21071 20.4142 5.58579C20.7893 5.96086 21 6.46957 21 7V17C21 17.5304 20.7893 18.0391 20.4142 18.4142C20.0391 18.7893 19.5304 19 19 19H5C4.46957 19 3.96086 18.7893 3.58579 18.4142C3.21071 18.0391 3 17.5304 3 17V7Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
@@ -98,7 +99,7 @@
                         <span>Devices</span>
                     </a>
                 </li>
-                <li>
+                <li class="@(Url.RequestContext.HttpContext.Request.Path.StartsWith("/portIn/") ? "mvno-admin-link-active" : "")">
                     <a href="/app/port-in" class="d-flex flex-column justify-content-center align-items-center">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                             <path d="M18 12C18.7956 12 19.5587 11.6839 20.1213 11.1213C20.6839 10.5587 21 9.79565 21 9V7C21 6.20435 20.6839 5.44129 20.1213 4.87868C19.5587 4.31607 18.7956 4 18 4H6C5.20435 4 4.44129 4.31607 3.87868 4.87868C3.31607 5.44129 3 6.20435 3 7V9C3 9.79565 3.31607 10.5587 3.87868 11.1213C4.44129 11.6839 5.20435 12 6 12M18 12H6M18 12C18.7956 12 19.5587 12.3161 20.1213 12.8787C20.6839 13.4413 21 14.2044 21 15V17C21 17.7956 20.6839 18.5587 20.1213 19.1213C19.5587 19.6839 18.7956 20 18 20H6C5.20435 20 4.44129 19.6839 3.87868 19.1213C3.31607 18.5587 3 17.7956 3 17V15C3 14.2044 3.31607 13.4413 3.87868 12.8787C4.44129 12.3161 5.20435 12 6 12M7 8V8.01M7 16V16.01M11 8H17M11 16H17" stroke="#F9F9F9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
@@ -106,7 +107,7 @@
                         <span>Port In</span>
                     </a>
                 </li>
-                <li>
+                <li class="@(Url.RequestContext.HttpContext.Request.Path.StartsWith("/alerts/") ? "mvno-admin-link-active" : "")">
                     <a href="/app/alerts" class="d-flex flex-column justify-content-center align-items-center">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                             <path d="M12 8V12M12 16H12.01M19.875 6.27008C20.575 6.66808 21.005 7.41308 21 8.21808V15.5021C21 16.3111 20.557 17.0571 19.842 17.4501L13.092 21.7201C12.7574 21.9038 12.3818 22.0001 12 22.0001C11.6182 22.0001 11.2426 21.9038 10.908 21.7201L4.158 17.4501C3.80817 17.2589 3.51612 16.9772 3.31241 16.6346C3.1087 16.2919 3.0008 15.9007 3 15.5021V8.21708C3 7.40808 3.443 6.66308 4.158 6.27008L10.908 2.29008C11.2525 2.10011 11.6396 2.00049 12.033 2.00049C12.4264 2.00049 12.8135 2.10011 13.158 2.29008L19.908 6.27008H19.875Z" stroke="#F9F9F9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
@@ -116,7 +117,7 @@
                 </li>
             </ul>
             <ul>
-                <li>
+                <li class="@(Url.RequestContext.HttpContext.Request.Path.StartsWith("/support/") ? "mvno-admin-link-active" : "")">
                     <a href="/app/support" class="d-flex flex-column justify-content-center align-items-center">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
                             <path d="M12 17.5V17.51M12 13.9999C11.9816 13.6753 12.0692 13.3535 12.2495 13.0829C12.4299 12.8124 12.6933 12.6078 13 12.4999C13.3759 12.3562 13.7132 12.1272 13.9856 11.8309C14.2579 11.5346 14.4577 11.1791 14.5693 10.7925C14.6809 10.4059 14.7013 9.99861 14.6287 9.60279C14.5562 9.20696 14.3928 8.83337 14.1513 8.51144C13.9099 8.1895 13.597 7.92801 13.2373 7.74754C12.8776 7.56707 12.4809 7.47256 12.0785 7.47145C11.6761 7.47033 11.2789 7.56264 10.9182 7.74111C10.5576 7.91958 10.2432 8.17933 10 8.49992M3 12.5C3 13.6819 3.23279 14.8522 3.68508 15.9442C4.13738 17.0361 4.80031 18.0282 5.63604 18.864C6.47177 19.6997 7.46392 20.3626 8.55585 20.8149C9.64778 21.2672 10.8181 21.5 12 21.5C13.1819 21.5 14.3522 21.2672 15.4442 20.8149C16.5361 20.3626 17.5282 19.6997 18.364 18.864C19.1997 18.0282 19.8626 17.0361 20.3149 15.9442C20.7672 14.8522 21 13.6819 21 12.5C21 11.3181 20.7672 10.1478 20.3149 9.05585C19.8626 7.96392 19.1997 6.97177 18.364 6.13604C17.5282 5.30031 16.5361 4.63738 15.4442 4.18508C14.3522 3.73279 13.1819 3.5 12 3.5C10.8181 3.5 9.64778 3.73279 8.55585 4.18508C7.46392 4.63738 6.47177 5.30031 5.63604 6.13604C4.80031 6.97177 4.13738 7.96392 3.68508 9.05585C3.23279 10.1478 3 11.3181 3 12.5Z" stroke="#F9F9F9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
@@ -135,7 +136,7 @@
                     <div class="flex-grow-0">
                         <div class="d-flex gap-3 align-items-center">
                             <!-- Company Selector -->
-                            <div class="form-floating" style="width: 180px;">
+                            <div class="form-floating" style="width: 220px;">
                                 @(Html.Kendo().DropDownList()
                                      .Name("companySelector")
                                      .DataTextField("Text")
@@ -150,14 +151,19 @@
                                  )
                             </div>
                             <!-- Search -->
-                            <div class="form-floating">
+                            <div class="form-floating" style="width: 220px;">
                                 <input type="text" class="form-control" id="mvno-admin-search" placeholder="Search..." aria-label="Search">
                                 <label for="mvno-admin-search" class="form-label">Search</label> 
                             </div>
                             <!-- User Profile -->
                             <div class="dropdown">
                                 <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    John Clavin
+                                    <div class="d-inline-flex align-items-center gap-2">
+                                        <div id="mvno-admin-user-avatar" class="d-flex align-items-center justify-content-center">
+                                            JC
+                                        </div>
+                                        <span>John Clavin</span>
+                                    </div>
                                 </button>
                                 <ul class="dropdown-menu">
                                     <li><a class="dropdown-item" href="/UserManagement/UsersList">User Management</a></li>
@@ -174,12 +180,12 @@
                     </div>
                 </div>
             </header>
-            <main style="height: calc(100vh - 120px);width: calc(100vw - 120px);">
+            <main id="mvno-admin-main-content">
                 @RenderBody()
             </main>
 
             <footer class="text-end px-4 py-2">
-                Copyright &copy; 2023 <strong>QUETZAL</strong>, Inc. All Rights Reserved.
+                Copyright &copy; 2023 <strong>Quetzal</strong>, Inc. All Rights Reserved.
             </footer>
         </div>
     </div>
