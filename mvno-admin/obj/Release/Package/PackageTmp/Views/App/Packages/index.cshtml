@@ -4,7 +4,7 @@
 
 <style type="text/css">
     .mvno-grid-wrapper {
-        height: calc(100vh - 358px);
+        height: calc(100vh - 354px);
     }
 </style>
 
@@ -30,10 +30,9 @@
                     .SelectedIndex(0)
                     .Items(tabstrip =>
                     {
-
                             tabstrip.Add().Text("Packages").Content(@<text>
                                 <!-- Actions -->
-                                <section class="d-flex flex-nowrap align-items-center py-2 mb-2">
+                                <section class="d-flex flex-nowrap align-items-center py-1 mb-2">
                                     <div class="flex-fill">
                                         <button class="btn btn-primary" onclick="window.location.href='/packages/AddNewPackage'">Add Package</button>
                                     </div>
@@ -46,7 +45,6 @@
                                         </button>
                                     </div>
                                 </section>
-
                                 <!-- Grid -->
                                 <section class="mvno-grid-wrapper w-100">
                                     @(Html.Kendo().Grid<mvno_admin.Models.Packages>()

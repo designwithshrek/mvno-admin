@@ -24,19 +24,19 @@
             <section class="container-fluid sticky-top bg-white py-4">
                 <div class="row">
                     <div class="col-2">
-                        <span>Active Customers in Package:<strong class="d-block">-</strong></span>
+                        <span>Active Customers in Package: <strong>-</strong></span>
                     </div>
                     <div class="col-2">
-                        <span>Effective Package Date:<strong class="d-block">NA</strong></span>
+                        <span>Effective Package Date: <strong>NA</strong></span>
                     </div>
                     <div class="col-2">
-                        <span>Expiration Package Date:<strong class="d-block">NA</strong></span>
+                        <span>Expiration Package Date: <strong>NA</strong></span>
                     </div>
                     <div class="col-2">
-                        <span>Restrictions On effective Date?: <strong class="d-block">-</strong></span>
+                        <span>Restrictions On effective Date?: <strong>-</strong></span>
                     </div>
                     <div class="col-2">
-                        <span>Package ID: <strong class="d-block">-</strong></span>
+                        <span>Package ID: <strong>-</strong></span>
                     </div>
                 </div>
             </section>
@@ -44,7 +44,7 @@
             <!--  -->
             <section class="container-fluid">
                 <div class="row">
-                    <div class="col-3 mb-3">
+                    <div class="col-auto mb-3">
                         @(Html.Kendo().CheckBox()
                             .Name("tribal")
                             .Label("Tribal")
@@ -52,7 +52,7 @@
                             .Checked(false)
                         )
                     </div>
-                    <div class="col-3 mb-3">
+                    <div class="col-auto mb-3">
                         @(Html.Kendo().CheckBox()
                             .Name("lifeLine")
                             .Label("Lifeline")
@@ -60,7 +60,7 @@
                             .Checked(false)
                         )
                     </div>
-                    <div class="col-3 mb-3">
+                    <div class="col-1 mb-3">
                         @(Html.Kendo().CheckBox()
                             .Name("autoRefresh")
                             .Label("Auto Refresh")
@@ -68,7 +68,7 @@
                             .Checked(false)
                         )
                     </div>
-                    <div class="col-3 mb-3">
+                    <div class="col-auto mb-3">
                         @(Html.Kendo().CheckBox()
                             .Name("autoPaid")
                             .Label("Auto Paid")
@@ -76,7 +76,7 @@
                             .Checked(false)
                         )
                     </div>
-                    <div class="col-3 mb-3">
+                    <div class="col-auto mb-3">
                         @(Html.Kendo().CheckBox()
                             .Name("needsCoverage")
                             .Label("Needs Coverage")
@@ -84,7 +84,7 @@
                             .Checked(false)
                         )
                     </div>
-                    <div class="col-3 mb-3">
+                    <div class="col-auto mb-3">
                         @(Html.Kendo().CheckBox()
                             .Name("topUp")
                             .Label("Topup")
@@ -92,7 +92,7 @@
                             .Checked(false)
                         )
                     </div>
-                    <div class="col-3 mb-3">
+                    <div class="col-auto mb-3">
                         @(Html.Kendo().CheckBox()
                             .Name("shared")
                             .Label("Shared")
@@ -100,7 +100,7 @@
                             .Checked(false)
                         )
                     </div>
-                    <div class="col-3 mb-3">
+                    <div class="col-auto mb-3">
                         @(Html.Kendo().CheckBox()
                             .Name("enabledForIVRPurchase")
                             .Label("Is Enabled For IVR Purchase?")
@@ -108,7 +108,7 @@
                             .Checked(false)
                         )
                     </div>
-                    <div class="col-3 mb-3">
+                    <div class="col-auto mb-3">
                         @(Html.Kendo().CheckBox()
                             .Name("webPackage")
                             .Label("Web Package")
@@ -116,7 +116,7 @@
                             .Checked(false)
                         )
                     </div>
-                    <div class="col-3 mb-3">
+                    <div class="col-auto mb-3">
                         @(Html.Kendo().CheckBox()
                             .Name("acp")
                             .Label("ACP")
@@ -413,11 +413,11 @@
                                         </div>
                                     </div>
                                     <div class="col-6">
-                                        <strong class="d-block">Message:</strong>
+                                        <strong>Message:</strong>
                                         <span>Device has no usage since 15 days. <a class="mx-1" role="button" data-bs-toggle="modal" data-bs-target="#usageMessageModal">Edit</a></span>
                                     </div>
                                     <div class="col-6">
-                                        <strong class="d-block">Message:</strong>
+                                        <strong>Message:</strong>
                                         <span>Balance is low. <a class="mx-1" role="button" data-bs-toggle="modal" data-bs-target="#lowBalanceMessageModal">Edit</a></span>
                                     </div>
                                 </div>

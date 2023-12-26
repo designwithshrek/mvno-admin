@@ -4,7 +4,7 @@
 
 <style type="text/css">
     #mvno-admin-subsciber-grid {
-        height: calc(100% - 54px);
+        height: calc(100% - 56px);
     }
 </style>
 
@@ -37,14 +37,14 @@
 
 <section id="mvno-admin-page-content" class="px-4">
     <div class="card h-100">
-        <div class="card-body h-100">
+        <div class="card-body h-100 overflow-auto">
 
             <section id="mvno-admin-subscriber-actions" class="mb-2">
                 <div class="d-flex align-items-center flex-nowrap">
                     <div class="flex-fill">
-                        <a href="/subscribers/createNewSubscriber" role="button" class="btn btn-primary">
+                        <button class="btn btn-primary" onclick="window.location.href='/subscribers/createNewSubscriber'">
                             Create New Subscriber
-                        </a>
+                        </button>
                     </div>
                     <div class="flex-grow-0">
                         <button class="btn">
@@ -68,35 +68,42 @@
 
             <div id="mvno-admin-subsciber-grid" class="mvno-grid-wrapper w-100">
                 @(Html.Kendo().Grid<mvno_admin.Models.Subscribers>()
-                .Name("subscribersGrid")
-                .Columns(columns =>
-                {
-                    columns.Bound(s => s.SubscriberId).Title("Subscriber ID");
-                    columns.Bound(s => s.SubscriberStatus).Title("Subscriber Status");
-                    columns.Bound(s => s.CLEC).Title("CLEC");
-                    columns.Bound(s => s.AgentName).Title("Agent Name");
-                    columns.Bound(s => s.MDN).Title("MDN");
-                    columns.Bound(s => s.FirstName).Title("First Name");
-                    columns.Bound(s => s.LastName).Title("Last Name");
-                    columns.Bound(s => s.Package).Title("Package");
-                    columns.Bound(s => s.NLAD).Title("NLAD");
-                    columns.Bound(s => s.NLADProgram).Title("NLAD Program");
-                    columns.Bound(s => s.IsEtc).Title("Is ETC");
-                    columns.Bound(s => s.isTribal).Title("Is Tribal");
-                })
-                .Sortable()
-                .Pageable(pageable => pageable
-                    .PageSizes(new[] { 25, 50, 100, 200 })
-                    .ButtonCount(5)
-                )
-                .DataSource(dataSource => dataSource
-                    .Ajax()
-                    .PageSize(20)
-                    .Read(read => read.Action("GetSubscribersList", "Subscribers"))
-                )
-                .Events(events => events
-                    .DataBound("onGridDataBound")
-                )
+                    .Name("subscribersGrid")
+                    .Columns(columns =>
+                    {
+                        columns.Bound(s => s.SubscriberId)
+                            .Title("Details")
+                            .ClientTemplate("<button class='btn p-0 d-flex align-items-center mvno-admin-subscriber-row-actions' onClick='ViewSubscriberDetails(#=SubscriberId#)'>" +
+                            "<svg xmlns='http://www.w3.org/2000/svg' width='24' height='25' viewBox='0 0 24 25' fill='none'>" +
+                            "<path d='M10 12.5C10 13.0304 10.2107 13.5391 10.5858 13.9142C10.9609 14.2893 11.4696 14.5 12 14.5C12.5304 14.5 13.0391 14.2893 13.4142 13.9142C13.7893 13.5391 14 13.0304 14 12.5C14 11.9696 13.7893 11.4609 13.4142 11.0858C13.0391 10.7107 12.5304 10.5 12 10.5C11.4696 10.5 10.9609 10.7107 10.5858 11.0858C10.2107 11.4609 10 11.9696 10 12.5Z'/>" +
+                            "<path d='M21 12.5C18.6 16.5 15.6 18.5 12 18.5C8.4 18.5 5.4 16.5 3 12.5C5.4 8.5 8.4 6.5 12 6.5C15.6 6.5 18.6 8.5 21 12.5Z'/>" +
+                            "</svg>" +
+                            "<span>View Details</span>" +
+                            "</button>")
+                            .Encoded(false);
+                        columns.Bound(s => s.SubscriberId).Title("Subscriber ID");
+                        columns.Bound(s => s.SubscriberStatus).Title("Subscriber Status");
+                        columns.Bound(s => s.CLEC).Title("CLEC");
+                        columns.Bound(s => s.AgentName).Title("Agent Name");
+                        columns.Bound(s => s.MDN).Title("MDN");
+                        columns.Bound(s => s.FirstName).Title("First Name");
+                        columns.Bound(s => s.LastName).Title("Last Name");
+                        columns.Bound(s => s.Package).Title("Package");
+                        columns.Bound(s => s.NLAD).Title("NLAD");
+                        columns.Bound(s => s.NLADProgram).Title("NLAD Program");
+                        columns.Bound(s => s.IsEtc).Title("Is ETC");
+                        columns.Bound(s => s.isTribal).Title("Is Tribal");
+                    })
+                    .Sortable()
+                    .Pageable(pageable => pageable
+                        .PageSizes(new[] { 25, 50, 100, 200 })
+                        .ButtonCount(5)
+                    )
+                    .DataSource(dataSource => dataSource
+                        .Ajax()
+                        .PageSize(20)
+                        .Read(read => read.Action("GetSubscribersList", "Subscribers"))
+                    )
                 )
             </div>
         </div>
@@ -113,83 +120,152 @@
             <div class="container-fluid p-0">
                 <div class="row">
                     <div class="col-6">
-                        <input class="form-control mb-3" type="text" placeholder="Subscriber ID" aria-label="Subscriber ID" />
+                        <div class="form-floating">
+                            <input class="form-control mb-3" type="text" placeholder="Subscriber ID" id="subscriberID" />
+                            <label for="subscriberID">Subscriber ID</label>
+                        </div>
                     </div>
                     <div class="col-6">
-                        <input class="form-control mb-3" type="text" placeholder="SSN" aria-label="SSN" />
+                        <div class="form-floating">
+                            <input class="form-control mb-3" type="text" placeholder="SSN" id="SSN" />
+                            <label for="SSN">SSN</label>
+                        </div>
                     </div>
                     <div class="col-6">
-                        @(Html.Kendo().DropDownList()
-                        .Name("provider")
-                        .DataTextField("Text")
-                        .DataValueField("Value")
-                        .OptionLabel("Provider")
-                        .HtmlAttributes(new { @class = "form-control mb-3" })
-                    )
+                        <div class="form-floating">
+                            @(Html.Kendo().DropDownList()
+                                .Name("provider")
+                                .DataTextField("Text")
+                                .DataValueField("Value")
+                                .OptionLabel("")
+                                .Label(label =>
+                                {
+                                    label.Content("Provider");
+                                    label.Floating(true);
+                                })
+                                .HtmlAttributes(new { @class = "form-control mb-3" })
+                            )
+                        </div>
                     </div>
                     <div class="col-6">
-                        <input class="form-control mb-3" type="text" placeholder="MDN" aria-label="MDN" />
+                        <div class="form-floating">
+                            <input class="form-control mb-3" type="text" placeholder="MDN" id="MDN" />
+                            <label for="MDN">MDN</label>
+                        </div>
                     </div>
                     <div class="col-6">
-                        <input class="form-control mb-3" type="text" placeholder="First Name" aria-label="First Name" />
+                        <div class="form-floating">
+                            <input class="form-control mb-3" type="text" placeholder="First Name" id="FirstName" />
+                            <label for="FirstName">First Name</label>
+                        </div>
                     </div>
                     <div class="col-6">
-                        <input class="form-control mb-3" type="text" placeholder="Last Name" aria-label="Last Name" />
+                        <div class="form-floating">
+                            <input class="form-control mb-3" type="text" placeholder="Last Name" id="LastName" />
+                            <label for="LastName">Last Name</label>
+                        </div>
                     </div>
                     <div class="col-6">
-                        <input class="form-control mb-3" type="text" placeholder="Street Address" aria-label="Street Address" />
+                        <div class="form-floating">
+                            <input class="form-control mb-3" type="text" placeholder="Street Address" id="StreetAddress" />
+                            <label for="StreetAddress">Street Address</label>
+                        </div>
                     </div>
                     <div class="col-6">
-                        <input class="form-control mb-3" type="text" placeholder="Street Address" aria-label="Apartment# or Suite#" />
+                        <div class="form-floating">
+                            <input class="form-control mb-3" type="text" placeholder="Apartment# or Suite#" id="ApartmentSuite" />
+                            <label for="ApartmentSuite">Apartment# or Suite #</label>
+                        </div>
                     </div>
                     <div class="col-6">
-                        @(Html.Kendo().DropDownList()
-                        .Name("state")
-                        .DataTextField("Text")
-                        .DataValueField("Value")
-                        .OptionLabel("State")
-                        .HtmlAttributes(new { @class = "form-control mb-3" })
-                    )
+                        <div class="form-floating">
+                            @(Html.Kendo().DropDownList()
+                                .Name("state")
+                                .DataTextField("Text")
+                                .DataValueField("Value")
+                                .OptionLabel("")
+                                .Label(label =>
+                                {
+                                    label.Content("State");
+                                    label.Floating(true);
+                                })
+                                .HtmlAttributes(new { @class = "form-control mb-3" })
+                            )
+                        </div>
                     </div>
                     <div class="col-6">
-                        @(Html.Kendo().DropDownList()
-                        .Name("city")
-                        .DataTextField("Text")
-                        .DataValueField("Value")
-                        .OptionLabel("City")
-                        .HtmlAttributes(new { @class = "form-control mb-3" })
-                    )
+                        <div class="form-floating">
+                            @(Html.Kendo().DropDownList()
+                                .Name("city")
+                                .DataTextField("Text")
+                                .DataValueField("Value")
+                                .OptionLabel("")
+                                .Label(label =>
+                                {
+                                    label.Content("City");
+                                    label.Floating(true);
+                                })
+                                .HtmlAttributes(new { @class = "form-control mb-3" })
+                            )
+                        </div>
                     </div>
                     <div class="col-6">
-                        <input class="form-control mb-3" type="text" placeholder="Zip Code" aria-label="Zip Code" />
+                        <div class="form-floating">
+                            <input class="form-control mb-3" type="text" placeholder="Zip Code" id="ZipCode" />
+                            <label for="ZipCode">Zip Code</label>
+                        </div>
                     </div>
                     <div class="col-6">
-                        <input class="form-control mb-3" type="text" placeholder="App Subscriber ID" aria-label="App Subscriber ID" />
+                        <div class="form-floating">
+                            <input class="form-control mb-3" type="text" placeholder="App Subscriber ID" id="AppSubscriberID" />
+                            <label for="AppSubscriberID">App Subscriber ID</label>
+                        </div>
                     </div>
                     <div class="col-6">
-                        @(Html.Kendo().DatePicker()
-                        .Name("createdFrom")
-                        .Format("dd-MM-yyyy")
-                        .Min(DateTime.Today)
-                        .HtmlAttributes(new { @placeholder = "Created From" })
-                    )
+                        <div class="form-floating">
+                            @(Html.Kendo().DatePicker()
+                                .Name("createdFrom")
+                                .Format("dd-MM-yyyy")
+                                .Min(DateTime.Today)
+                                .Label(label =>
+                                {
+                                    label.Content("Created From");
+                                    label.Floating(true);
+                                })
+                                .HtmlAttributes(new { @placeholder = "dd-mm-yyyy" })
+                            )
+                        </div>
                     </div>
                     <div class="col-6">
-                        @(Html.Kendo().DatePicker()
-                        .Name("createdTo")
-                        .Format("dd-MM-yyyy")
-                        .Min(DateTime.Today)
-                        .HtmlAttributes(new { @placeholder = "Created To" })
-                    )
+                        <div class="form-floating">
+                            @(Html.Kendo().DatePicker()
+                                .Name("createdTo")
+                                .Format("dd-MM-yyyy")
+                                .Min(DateTime.Today)
+                                .Label(label =>
+                                {
+                                    label.Content("Created To");
+                                    label.Floating(true);
+                                })
+                                .HtmlAttributes(new { @placeholder = "dd-mm-yyyy" })
+                            )
+                        </div>
                     </div>
                     <div class="col-12">
-                        @(Html.Kendo().DropDownList()
-                        .Name("source")
-                        .DataTextField("Text")
-                        .DataValueField("Value")
-                        .OptionLabel("Where did you hear about us?")
-                        .HtmlAttributes(new { @class = "form-control my-3" })
-                    )
+                        <div class="form-floating mt-3">
+                            @(Html.Kendo().DropDownList()
+                                .Name("source")
+                                .DataTextField("Text")
+                                .DataValueField("Value")
+                                .OptionLabel("")
+                                .Label(label =>
+                                {
+                                    label.Content("Where did you hear about us?");
+                                    label.Floating(true);
+                                })
+                                .HtmlAttributes(new { @class = "form-control mb-3" })
+                            )
+                        </div>
                     </div>
                     <div class="col-12">
                         <div class="d-flex align-items-center gap-4 mb-4">
@@ -224,10 +300,7 @@
 </div>
 
 <script>
-    function onGridDataBound(e) {
-        $("#subscribersGrid tbody tr").on("click", function (event) {
-            var dataItem = $("#subscribersGrid").data("kendoGrid").dataItem(this);
-            window.location.href = "/subscribers/viewSubscriber/" + dataItem.SubscriberId;
-        });
+    function ViewSubscriberDetails(SubscriberId) {
+        window.location.href = "/subscribers/viewSubscriber/" + SubscriberId;
     }
 </script>
